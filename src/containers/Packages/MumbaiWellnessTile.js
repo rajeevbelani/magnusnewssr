@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from 'material-ui-next/styles'
+import { withStyles } from 'material-ui/styles'
 import { Link } from 'react-static'
-import ButtonBase from 'material-ui-next/ButtonBase'
+import ButtonBase from 'material-ui/ButtonBase'
 import Box from 'grommet/components/Box'
 import Footer from 'grommet/components/Footer'
 import Card from 'grommet/components/Card'
 import Section from 'grommet/components/Section'
-import Typography from 'material-ui-next/Typography'
+import Typography from 'material-ui/Typography'
 
 
 

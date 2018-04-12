@@ -18,7 +18,7 @@ import Paragraph from 'grommet/components/Paragraph'
 import Accordion from 'grommet/components/Accordion'
 import AccordionPanel from 'grommet/components/AccordionPanel'
 
-import GridList, { GridListTile, GridListTileBar } from 'material-ui-next/GridList'
+import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList'
 import Box from 'grommet/components/Box'
 import LinkNext from 'grommet/components/icons/base/FormNextLink'
 import OtherPackages from './OtherPackages'
