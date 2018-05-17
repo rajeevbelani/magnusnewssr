@@ -124,6 +124,8 @@ class Header extends React.Component {
       activeMenuItem = 'treatments'
     } else if (/hospitals/.test(path)) {
       activeMenuItem = 'Hospitals'
+    } else if (/newsevents/.test(path)) {
+      activeMenuItem = 'newsevents'
     } else if (/about/.test(path)) {
       activeMenuItem = 'About'
     } else if (path === '/') {
@@ -178,6 +180,9 @@ class Header extends React.Component {
         </Menu.Item>
         <Menu.Item key="Treatments">
           <Link to="/treatments">Treatments</Link>
+        </Menu.Item>
+        <Menu.Item key="newsevents">
+          <Link to="/newsevents">News & Events</Link>
         </Menu.Item>
         {/* <Menu.Item key="Doctors">
           <Link to="/doctors">Doctors</Link>
