@@ -9,6 +9,7 @@ import { Provider } from 'react-redux'
 import '../node_modules/grommet-css'
 import Box from 'grommet/components/Box'
 import Routes from 'react-static-routes'
+import Hidden from 'material-ui/Hidden'
 import store from './store'
 import Image from 'grommet/components/Image'
 import Button from 'material-ui/Button'
@@ -31,8 +32,6 @@ injectGlobal`
     display: flex;
   }
 `
-
-
 
 class MagnusApp extends React.Component {
   state = {
@@ -66,12 +65,14 @@ class MagnusApp extends React.Component {
                       Copyright Magnus Medi
                 </Footer>  */}
               </div>
-              <Affix offsetBottom={40} className="fab">
-                <Row gutter={10}>
-                    <Col span={12}></Col>
-                    <Col span={6}><Link to='https://api.whatsapp.com/send?phone=918108888129&text=somemessage'><Image src='./whatsapp.png' size='thumb' /></Link></Col>
-                </Row>
-            </Affix>  
+              <Hidden mdUp>
+                <Affix offsetBottom={40} className="fab">
+                  <Row gutter={10}>
+                      <Col span={12}></Col>
+                      <Col span={6}><Link to='https://api.whatsapp.com/send?phone=919137961307&text=Hi I need some advice on travelling to India for some treatment'><Image src='./whatsapp.png' size='small' /></Link></Col>
+                  </Row>
+                </Affix>
+            </Hidden>
           </Box>
         </Router>
       </Provider>

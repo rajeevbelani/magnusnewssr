@@ -112,11 +112,13 @@ class ResponsiveDrawer extends React.Component {
         {/* <Hidden mdDown>  */}
         {/* <Drawer width="240px" /> */}
         <Hidden mdUp>
-          <PreHeader />
+          <Affix>
+            <PreHeader />
+          </Affix>
         </Hidden>
-        <Affix>
-          <Header />
-        </Affix>
+
+        <Header />
+
         {/* </Hidden>  */}
         <div>
           <Hidden mdUp>
@@ -132,43 +134,39 @@ class ResponsiveDrawer extends React.Component {
                 <Menu theme="light" mode="inline" defaultSelectedKeys={['1']}>
                   <Menu.Item key="1">
                     <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
-                      <Icon type="home" />
+                      {/* <Icon type="home" /> */}
                       <span>Home</span>
                     </Link>
                   </Menu.Item>
                   <Menu.Item key="2">
                     <Link to="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>
-                      <Icon type="bars" />
+                      {/* <Icon type="bars" /> */}
                       <span>Blog</span>
                     </Link>
                   </Menu.Item>
                   <Menu.Item key="3">
                     <Link to="/patientstories" style={{ color: 'inherit', textDecoration: 'none' }}>
-                      <Icon type="pushpin-o" />
+                      {/* <Icon type="pushpin-o" /> */}
                       <span>Patient Stories</span>
                     </Link>
                   </Menu.Item>
-                  <Menu.Item key="4">
+                  {/* <Menu.Item key="4">
                     <Link to="/hospitals" style={{ color: 'inherit', textDecoration: 'none' }}>
-                      <Icon type="pushpin-o" />
                       <span>Hospitals</span>
                     </Link>
                   </Menu.Item>
                   <Menu.Item key="5">
                     <Link to="/doctors" style={{ color: 'inherit', textDecoration: 'none' }}>
-                      <Icon type="pushpin-o" />
                       <span>Doctors</span>
                     </Link>
                   </Menu.Item>
                   <Menu.Item key="6">
                     <Link to="/treatments" style={{ color: 'inherit', textDecoration: 'none' }}>
-                      <Icon type="pushpin-o" />
                       <span>Treatments</span>
                     </Link>
-                  </Menu.Item>
+                  </Menu.Item> */}
                   <Menu.Item key="7">
                     <Link to="/about" style={{ color: 'inherit', textDecoration: 'none' }}>
-                      <Icon type="pushpin-o" />
                       <span>About</span>
                     </Link>
                   </Menu.Item>

@@ -20,7 +20,7 @@ class Home extends Component {
   render () {
     const patientSnippets = this.props.homepageData.snippets
     
-    return (<div>
+    return (<div style={{ ul: '0px' }}>
       <Banner />
       <Features />
       <OurAssociates />

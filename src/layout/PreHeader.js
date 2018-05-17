@@ -231,7 +231,7 @@ class PreHeader extends React.Component {
                     <a
                       id="preview-button"
                       target="_blank"
-                      href="mailto:test@test.com"
+                      href="mailto:wecare@magnusmedi.com"
                       rel="noopener noreferrer">
                       <Button icon="mail">
                             Email Us
@@ -249,7 +249,7 @@ class PreHeader extends React.Component {
                     <a
                       id="preview-button"
                       target="_blank"
-                      href="javascript:window.open('tel:8108888129')"
+                      href="javascript:window.open('tel:+919137961307')"
                       rel="noopener noreferrer">
                       <Button icon="phone">
                             Call Us

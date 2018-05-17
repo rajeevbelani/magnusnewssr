@@ -161,7 +161,7 @@ class PatientTestimonialHome extends React.PureComponent {
       </QueueAnim>
     ))
     return (
-      <div className="home-page page1" >
+      <div className="home-page page3">
         <div className="home-page-wrapper" id="page1-wrapper">
           {/* {!this.props.isMobile && (
             <Parallax

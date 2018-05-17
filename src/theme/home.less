@@ -137,6 +137,9 @@ svg g {
   margin: auto;
   position: relative;
   color: #31465C;
+  ul {
+    margin-left: 0px;
+  }
 }
 
 
@@ -241,7 +244,7 @@ svg g {
 
 /** page1 **/
 .page1 {
-  height: 650px;
+  height: 850px;
   background: #fff;
 }
 .page1-line.title-line-wrapper {
@@ -281,6 +284,9 @@ svg g {
   margin-bottom: 62px;
   display: flex;
   align-items: flex-start;
+  ul {
+    margin-left: 0px;
+  };
   li {
     width: 33.33%;
     display: inline-block;
@@ -303,7 +309,36 @@ svg g {
         background: #fff;
         transition: box-shadow .3s ease-out, transform .3s ease-out;
       }
+
       &:hover .page1-image {
+        transform: translateY(-5px);
+      }
+      h3 {
+        color: #0d1a26;
+        font-size: 16px;
+        margin: 8px auto;
+      }
+    }
+    .page3-box {
+      width: 194px;
+      margin: auto;
+      text-align: center;
+      position: relative;
+      .page3-image {
+        width: 100px;
+        height: 80px;
+        border-radius: 15px;
+        margin: 20px auto 32px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        transition: box-shadow .3s ease-out, transform .3s ease-out;
+      }
+      
+      &:hover .page3-image {
         transform: translateY(-5px);
       }
       h3 {
@@ -390,7 +425,7 @@ svg g {
 /** page2 **/
 .page2 {
   text-align: center;
-  height: 520px;
+  height: 870px;
 
   .page2-content {
     will-change: transform;
@@ -431,6 +466,11 @@ svg g {
 
 .home-code-comment {
   color: @site-text-color-secondary !important;
+}
+
+.page3 {
+  height: 620px;
+  background: #fff;
 }
 
 @keyframes bannerTitleLine {

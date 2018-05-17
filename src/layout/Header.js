@@ -179,12 +179,12 @@ class Header extends React.Component {
         <Menu.Item key="Treatments">
           <Link to="/treatments">Treatments</Link>
         </Menu.Item>
-        <Menu.Item key="Doctors">
+        {/* <Menu.Item key="Doctors">
           <Link to="/doctors">Doctors</Link>
         </Menu.Item>
         <Menu.Item key="Hospitals">
           <Link to="/hospitals">Hospitals</Link>
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item key="About">
           <Link to="/about">About</Link>
         </Menu.Item>

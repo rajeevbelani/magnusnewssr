@@ -6,6 +6,7 @@ import TweenOne from 'rc-tween-one'
 import PropTypes from 'prop-types'
 import { List, Card, Carousel } from 'antd'
 import kdh from '../../kdh.png'
+import { Avatar } from 'antd'
 
 const TweenOneGroup = TweenOne.TweenOneGroup
 const { Meta } = Card
@@ -87,16 +88,60 @@ const pointPos = [
 
 const data = [
   {
-    image: 'https://mk0similima57rg8gkp8.kinstacdn.com/wp-content/uploads/2016/03/ambani.png',
+    image: '/images/hospitals/ambani.png',
     title: 'Kokilaben Hospital',
   },
   {
-    image: 'https://static.lybrate.com/img/documents/clinic/logo/d2a803d1ee045f7dd8d9c9e12e1e4d9a/BSES-MG-Hospital-Andheri-West-Surgical-Oncologist-Mumbai-a1a33b.jpg',
+    image: '/images/hospitals/apollo.png',
+    title: 'Apollo Hospital',
+  },
+  {
+    image: '/images/hospitals/artemis.jpg',
+    title: 'Artemis Hospital',
+  },
+  {
+    image: '/images/hospitals/blk.jpeg',
+    title: 'BLK Hospital',
+  },
+  {
+    image: '/images/hospitals/fortis.jpeg',
+    title: 'Fortis Hospital',
+  },
+  {
+    image: '/images/hospitals/global.png',
     title: 'Global Hospital',
   },
   {
-    image: 'https://practo-fabric.s3.amazonaws.com/apollo-hospital-opp-iim-bangalore-1450969492-567c0994359a5.jpg',
-    title: 'Apollo Hospital',
+    image: '/images/hospitals/jaslok.jpg',
+    title: 'Jaslok Hospital',
+  },
+  {
+    image: '/images/hospitals/kohinoor.png',
+    title: 'Kohinoor Hospital',
+  },
+  {
+    image: '/images/hospitals/manipal.jpeg',
+    title: 'Manipal Hospital',
+  },
+  {
+    image: '/images/hospitals/max_healthcare.png',
+    title: 'Max Healthcare Hospital',
+  },
+  {
+    image: '/images/hospitals/medanta.png',
+    title: 'Medanta Hospital',
+  },
+  {
+    image: '/images/hospitals/narayana.png',
+    title: 'Narayana Hospital',
+  },
+  {
+    image: '/images/hospitals/shree_krishna.png',
+    title: 'Shree Krishna Hospital',
+  },
+  {
+    image: '/images/hospitals/wockhardt.png',
+    title: 'Wockhardt Hospital',
   },
   // {
   //   image: 'https://mk0similima57rg8gkp8.kinstacdn.com/wp-content/uploads/2016/03/ambani.png',
@@ -148,8 +193,8 @@ class OurAssociates extends React.PureComponent {
   }
   render () {
     const { hoverNum } = this.state
-    let children = [[], [], []]
-    featuresEN.forEach((item, i) => {
+    let children = [[], [], [], [], []]
+    data.forEach((item, i) => {
       const isHover = hoverNum === i
       const pointChild = [
         'point-0 left', 'point-0 right',
@@ -168,43 +213,33 @@ class OurAssociates extends React.PureComponent {
       const child = (
         <li key={i.toString()} >
           <div
-            className="page1-box"
+            className="page3-box"
             onMouseEnter={() => { this.onMouseOver(i) }}
             onMouseLeave={this.onMouseOut}
           >
             <TweenOneGroup
-              className="page1-point-wrapper"
+              className="page3-point-wrapper"
               enter={this.getEnter}
-              leave={{ x: 0, y: 30, opacity: 0, duration: 100, ease: 'easeInBack' }}
+              leave={{ x: 0, y: 30, opacity: 0, duration: 300, ease: 'easeInBack' }}
               resetStyleBool={false}
             >
               {(this.props.isMobile || isHover) && pointChild}
             </TweenOneGroup>
-            <Card
-              hoverable
-              style={{ width: 240 }}
-              cover={<img alt="example" src={kdh} />}
-            >
-              <Meta
-                title="Kokilaben Hospital"
-                description=""
-              />
-            </Card>
-            {/* <div
-              className="page1-image"
+            <div
+              className="page3-image"
               style={{
                 boxShadow: `${isHover ? '0 12px 24px' :
                   '0 6px 12px'} ${item.shadowColor}`,
               }}
             >
-              <img src={item.src} alt="img" style={i === 4 ? { marginLeft: -15 } : {}} />
+              <Avatar src={item.image} alt="img" style={i === 5 ? { marginLeft: -15, width: '140px', height: '80px', borderRadius: '60px' } : { width: '140px', height: '80px' }} />
             </div>
             <h3>{item.title}</h3>
-            <p>{item.content}</p> */}
+            <p>{item.content}</p>
           </div>
         </li>
       )
-      children[Math.floor(i / 3)].push(child)
+      children[Math.floor(i / 5)].push(child)
     })
 
     children = children.map((item, i) => (
@@ -236,16 +271,16 @@ class OurAssociates extends React.PureComponent {
             <div className="title-line" />
           </div>
           {/* <OverPack> */}
-          <List
+          {/* <List
             grid={{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3 }}
             dataSource={data}
             renderItem={item => (
               <List.Item>
-                <Card cover={<img alt="example" src={item.image} />} title={item.title}></Card>
+                <Card cover={<img alt="example" src={item.image} />} title={item.title} />
               </List.Item>
             )}
-          />
-          {/* {children} */}
+          /> */}
+          {children}
           {/* </OverPack> */}
         </div>
       </div>

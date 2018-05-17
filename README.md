@@ -33,4 +33,3 @@ added later)
 
 To get started, run `react-static create` and use the `less-antdesign` 
 template.
-# magnusnewssr

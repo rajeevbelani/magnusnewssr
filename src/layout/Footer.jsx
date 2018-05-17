@@ -36,10 +36,18 @@ class Footer extends React.Component {
             <Col lg={8} sm={24} xs={24}>
               <div className="footer-center">
                 <div>
-                  <h2>Address</h2>
-                  <p>Address Line 1 <br />
-                  Address Line 2 <br />
-                  40043943  <br /></p>
+                  <h1>Address</h1>
+                  <h2>HEAD OFFICE</h2>
+                  <p>Magnus Meditourism Private Limited<br />
+                  27, 1st Floor, Jai Hind Cottage <br />
+                  Shahaji raje Marg, <br />
+                  Vile Parle (East) <br />
+                  Mumbai 400057 <br />
+                  INDIA <br /> </p>
+                  <h2>UGANDA OFFICE</h2>
+                  <p>Room 33, 3rd floor, Akamwesi Complex, Plot 112, <br />
+                  Old Port Bell Road, P.O. Box 34254,<br />
+                  Kampala, Uganda <br /></p>
                 </div>
               </div>
             </Col>
