@@ -60,7 +60,7 @@ class Banner extends Component {
               {/* <img src="https://www.fraserinstitute.org/sites/default/files/styles/large/public/comparing-performance-of-universal-health-care-countries-2017-web.jpg?itok=QnM2pgxO" width="100%" /> */}
               {/* <img alt="banner"
               src="https://gw.alipayobjects.com/zos/rmsportal/rqKQOpnMxeJKngVvulsF.svg"
-              width="100%"
+              width="100%"w
             /> */}
             </div>
           </TweenOne>
@@ -73,7 +73,7 @@ class Banner extends Component {
           </div>
           <h1 key="h1">Your Health Deserves More</h1>
           <p key="content">
-          Some other small description
+            Helping you Travel to India for treatment every step of the way
           </p>
           <div key="button" className="button-wrapper">
             <Form onSubmit={this.showModal}>
