@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import QueueAnim from 'rc-queue-anim'
 import TweenOne from 'rc-tween-one'
+import YouTube from 'react-youtube'
 import { Button, Modal, Form } from 'antd'
 import { Link } from 'react-static'
 // import { FormattedMessage } from 'react-intl'
 import BannerSVGAnim from './BannerSVGAnim'
 import { enquireScreen } from '../../layout/utils'
 import FreeQueryForm from './FreeQueryForm'
+import Hidden from 'material-ui/Hidden'
+
 
 let isMobile = false
 
@@ -44,12 +47,17 @@ class Banner extends Component {
 
   //   const isZhCN = utils.isZhCN(location.pathname)
   render () {
+    const opts = {
+      height: '290',
+      width: '300',
+    }
     return (
       <div className="banner-wrapper">
         {isMobile && (
           <TweenOne animation={{ opacity: 1 }} className="banner-image-wrapper">
             <div className="home-banner-image">
-              <img src="https://www.fraserinstitute.org/sites/default/files/styles/large/public/comparing-performance-of-universal-health-care-countries-2017-web.jpg?itok=QnM2pgxO" width="100%" />
+              <YouTube videoId="REZelbp272g" opts={opts} />
+              {/* <img src="https://www.fraserinstitute.org/sites/default/files/styles/large/public/comparing-performance-of-universal-health-care-countries-2017-web.jpg?itok=QnM2pgxO" width="100%" /> */}
               {/* <img alt="banner"
               src="https://gw.alipayobjects.com/zos/rmsportal/rqKQOpnMxeJKngVvulsF.svg"
               width="100%"
@@ -89,7 +97,13 @@ class Banner extends Component {
         {!isMobile && (
           <TweenOne animation={{ opacity: 1 }} className="banner-image-wrapper">
             {/* <BannerSVGAnim /> */}
-            <img src="https://www.fraserinstitute.org/sites/default/files/styles/large/public/comparing-performance-of-universal-health-care-countries-2017-web.jpg?itok=QnM2pgxO" />
+            {/* <img src="https://www.fraserinstitute.org/sites/default/files/styles/large/public/comparing-performance-of-universal-health-care-countries-2017-web.jpg?itok=QnM2pgxO" /> */}
+            <Hidden mdUp>
+              <YouTube videoId="REZelbp272g" opts={opts} />
+            </Hidden>
+            <Hidden mdDown>
+              <YouTube videoId="REZelbp272g" />
+            </Hidden>
           </TweenOne>
         )}
 
