@@ -165,6 +165,11 @@ class ResponsiveDrawer extends React.Component {
                       <span>Treatments</span>
                     </Link>
                   </Menu.Item> */}
+                  <Menu.Item key="8">
+                    <Link to="/newsevents" style={{ color: 'inherit', textDecoration: 'none' }}>
+                      <span>News & Events</span>
+                    </Link>
+                  </Menu.Item>
                   <Menu.Item key="7">
                     <Link to="/about" style={{ color: 'inherit', textDecoration: 'none' }}>
                       <span>About</span>
