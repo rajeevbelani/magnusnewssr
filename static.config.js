@@ -169,7 +169,7 @@ export default {
           pageTitle: 'News & Events',
         }),
         children: newsNEvents.map(post => ({
-          path: `/newsevents/${post.slug}`,
+          path: `/post/${post.slug}`,
           component: 'src/containers/Post',
           getData: () => ({
             post,

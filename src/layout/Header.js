@@ -121,7 +121,7 @@ class Header extends React.Component {
     } else if (/patientstories/.test(path)) {
       activeMenuItem = 'patientStories'
     } else if (/treatments/.test(path)) {
-      activeMenuItem = 'treatments'
+      activeMenuItem = 'Treatments'
     } else if (/hospitals/.test(path)) {
       activeMenuItem = 'Hospitals'
     } else if (/newsevents/.test(path)) {

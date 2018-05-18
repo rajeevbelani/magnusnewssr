@@ -34,7 +34,9 @@ export function getBlogDescription (post) {
 }
 
 export function getBlogLink (post) {
+  console.log(`Blog Link ::  ${post.type}`)
   if (post.type === 'patient_stories') { return `/patientstories/post/${post.slug}/` } else if (post.type === 'treatment_description') { return `/treatments/treatment/${post.slug}/` }
+  else if (post.type === 'news_and_events') { return `/newsevents/post/${post.slug}/` }
   return `/blog/post/${post.slug}/`
 }
 

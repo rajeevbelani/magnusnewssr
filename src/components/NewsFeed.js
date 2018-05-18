@@ -41,7 +41,7 @@ export default class NewsFeed extends Component {
           <div
             dangerouslySetInnerHTML={{
               __html: `
-                <div style="width:225px; text-align:center;" ><iframe  src="https://www.eventbrite.com/calendar-widget?eid=45800039150" frameborder="0" height="577" width="195" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:12px; padding:10px 0 5px; margin:2px; width:195px; text-align:center;" ></div></div>
+                <div style="width:225px; text-align:center;" ><iframe  src="https://www.eventbrite.com/calendar-widget?eid=45800039150" frameborder="0" height="577" width="195" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true"></iframe><div style="fontFamily:Helvetica, Arial; font-size:12px; padding:10px 0 5px; margin:2px; width:195px; text-align:center;" ></div></div>
               `,
             }}
           />
