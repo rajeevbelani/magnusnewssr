@@ -29,7 +29,7 @@ export default class NewsFeed extends Component {
 
   render () {
     const { posts, showDesc, noColums } = this.props
-
+    // console.log(`POSTS :::  ${JSON.stringify(posts)}`)
     return (
 
       <Columns
@@ -37,6 +37,15 @@ export default class NewsFeed extends Component {
         justify="center"
         maxCount={noColums}
       >
+        <Box pad="medium">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `
+                <div style="width:225px; text-align:center;" ><iframe  src="https://www.eventbrite.com/calendar-widget?eid=45800039150" frameborder="0" height="577" width="195" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:12px; padding:10px 0 5px; margin:2px; width:195px; text-align:center;" ></div></div>
+              `,
+            }}
+          />
+        </Box>
         {posts.map(post => (
           <Box pad="medium">
             { getMappedTypeForPost(post) === 'TYPE_BLOG' && <BlogCard post={post} showDescription={showDesc} /> }
