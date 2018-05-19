@@ -110,7 +110,7 @@ class EnquiryForm extends Component {
     ))
 
     return (
-      <Form netlify="" className="footerForm" onSubmit={this.handleSubmit}>
+      <Form netlify="" className="footerForm" >
         <FormItem
           {...formItemLayout}
           label="E-mail"
