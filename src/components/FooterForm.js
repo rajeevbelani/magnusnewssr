@@ -110,7 +110,7 @@ class EnquiryForm extends Component {
     ))
 
     return (
-      <Form data-netlify="true" className="footerForm" >
+      <Form name="footerForm" data-netlify="true" className="footerForm" action="/about">
         <FormItem
           {...formItemLayout}
           label="E-mail"
