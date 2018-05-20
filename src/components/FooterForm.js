@@ -45,12 +45,12 @@ class EnquiryForm extends Component {
     this.props.form.validateFieldsAndScroll((err, values) => {
       console.log(`Handle Submit ::  ${err}`)
       if (!err) {
-        fetch("/", {
-          method: "POST",
-          body: encode({ "form-name": "footerForm1", ...this.state })
-        })
-          .then(() => alert("Success!"))
-          .catch(error => alert(error));
+        // fetch("/", {
+        //   method: "POST",
+        //   body: encode({ "form-name": "footerForm1", ...this.state })
+        // })
+        //   .then(() => alert("Success!"))
+        //   .catch(error => alert(error));
     
         // e.preventDefault();
         console.log('Received values of form: ', values)
