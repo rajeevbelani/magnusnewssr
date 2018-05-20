@@ -31,8 +31,8 @@ const residences = [{
 
 class EnquiryForm extends Component {
   state = {
-    confirmDirty: false,
-    autoCompleteResult: [],
+    // confirmDirty: false,
+    // autoCompleteResult: [],
   };
   handleSubmit = e => {
     // e.preventDefault()
@@ -40,7 +40,7 @@ class EnquiryForm extends Component {
       if (!err) {
         fetch("/", {
           method: "POST",
-          body: encode({ "form-name": "footerForm", ...this.state })
+          body: encode({ "form-name": "footerForm1", ...this.state })
         })
           .then(() => alert("Success!"))
           .catch(error => alert(error));
@@ -127,7 +127,7 @@ class EnquiryForm extends Component {
     ))
 
     return (
-      <Form name="footerForm" method="post" data-netlify="true" className="footerForm" onSubmit={this.handleSubmit}>
+      <Form name="footerForm1" method="post" data-netlify="true" className="footerForm" onSubmit={this.handleSubmit}>
         <FormItem
           {...formItemLayout}
           label="E-mail"

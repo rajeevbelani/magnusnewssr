@@ -29,19 +29,41 @@ const residences = [{
   }],
 }]
 
+function encode (data) {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&')
+}
+
 class QueryForm extends Component {
   state = {
-    confirmDirty: false,
-    autoCompleteResult: [],
+    // confirmDirty: false,
+    // autoCompleteResult: [],
   };
-  handleSubmit = e => {
-    e.preventDefault()
-    this.props.form.validateFieldsAndScroll((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values)
-      }
-    })
+  // handleSubmit = e => {
+  //   e.preventDefault()
+  //   this.props.form.validateFieldsAndScroll((err, values) => {
+  //     if (!err) {
+  //       console.log('Received values of form: ', values)
+  //     }
+  //   })
+  // }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
   }
+
+  handleSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...this.state }),
+    })
+      .then(() => alert('uploaded'))
+      .catch(error => alert(error))
+    
+    e.preventDefault()
+  };
   handleConfirmBlur = e => {
     const value = e.target.value
     this.setState({ confirmDirty: this.state.confirmDirty || !!value })
@@ -110,53 +132,44 @@ class QueryForm extends Component {
     ))
 
     return (
-      <Form name="freeEnquiryForm" className="footerForm" onSubmit={this.handleSubmit}>
-        <FormItem
-          {...formItemLayout}
-          label="E-mail"
-          style={{ color: '#fff' }}
+      <div>
+        <h1>Contact</h1>
+        <form
+          name="contact"
+          method="post"
+          action="/thanks/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={this.handleSubmit}
         >
-          {getFieldDecorator('email', {
-            rules: [{
-              type: 'email', message: 'The input is not valid E-mail!',
-            }, {
-              required: true, message: 'Please input your E-mail!',
-            }],
-          })(
-            <Input />
-          )}
-        </FormItem>
-        <FormItem
-          {...formItemLayout}
-          label="Phone"
-        >
-          {getFieldDecorator('phone', {
-            rules: [{ required: true, message: 'Please input your phone number!' }],
-          })(
-            <Input style={{ width: '100%' }} />
-          )}
-        </FormItem>
-        <FormItem
-          {...formItemLayout}
-          label={(
-            <span>
-              Message&nbsp;
-              <Tooltip title="Please give a brief description of what you are looking for?">
-                <Icon type="question-circle-o" />
-              </Tooltip>
-            </span>
-          )}
-        >
-          {getFieldDecorator('nickname', {
-            rules: [{ required: false, message: 'Please input your nickname!', whitespace: true }],
-          })(
-            <Input />
-          )}
-        </FormItem>
-        <FormItem {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">Enquire Now</Button>
-        </FormItem>
-      </Form>
+          <p hidden>
+            <label>
+            Don’t fill this out: <input name="bot-field" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <label>
+            Your name:<br />
+              <input type="text" name="name" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <label>
+            Your email:<br />
+              <input type="email" name="email" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <label>
+            Message:<br />
+              <textarea name="message" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
+      </div>
     )
   }
 }
