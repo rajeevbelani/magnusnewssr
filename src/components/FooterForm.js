@@ -41,19 +41,19 @@ class EnquiryForm extends Component {
     // autoCompleteResult: [],
   };
   handleSubmit = e => {
-    // e.preventDefault()
+    e.preventDefault()
     this.props.form.validateFieldsAndScroll((err, values) => {
       console.log(`Handle Submit ::  ${err}`)
       if (!err) {
-        // fetch("/", {
-        //   method: "POST",
-        //   body: encode({ "form-name": "footerForm1", ...this.state })
-        // })
-        //   .then(() => alert("Success!"))
-        //   .catch(error => alert(error));
+        fetch("/", {
+          method: "POST",
+          body: encode({ "form-name": "footerForm1", ...this.state })
+        })
+          .then(() => alert("Success!"))
+          .catch(error => alert(error));
     
         // e.preventDefault();
-        // console.log('Received values of form: ', values)
+        console.log('Received values of form: ', values)
       }
     })
   }
@@ -134,7 +134,7 @@ class EnquiryForm extends Component {
     ))
 
     return (
-      <Form name="footerForm1" method="post" data-netlify="true" className="footerForm" onSubmit={this.handleSubmit}>
+      <Form name="footerForm1" data-netlify="true" className="footerForm" onSubmit={this.handleSubmit}>
         <FormItem
           {...formItemLayout}
           label="E-mail"
@@ -147,7 +147,7 @@ class EnquiryForm extends Component {
               required: true, message: 'Please input your E-mail!',
             }],
           })(
-            <Input name="form-name" value="footerForm" onChange={this.handleChange} />
+            <Input name="email" onChange={this.handleChange} />
           )}
         </FormItem>
         <FormItem
@@ -157,7 +157,7 @@ class EnquiryForm extends Component {
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: 'Please input your phone number!' }],
           })(
-            <Input style={{ width: '100%' }} name="form-name" value="footerForm" onChange={this.handleChange}  />
+            <Input style={{ width: '100%' }} name="phone" onChange={this.handleChange}  />
           )}
         </FormItem>
         <FormItem
@@ -174,7 +174,7 @@ class EnquiryForm extends Component {
           {getFieldDecorator('nickname', {
             rules: [{ required: false, message: 'Please input your nickname!', whitespace: true }],
           })(
-            <Input name="form-name" value="footerForm" onChange={this.handleChange} />
+            <Input name="message" onChange={this.handleChange} />
           )}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
