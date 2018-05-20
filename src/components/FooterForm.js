@@ -29,6 +29,12 @@ const residences = [{
   }],
 }]
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 class EnquiryForm extends Component {
   state = {
     // confirmDirty: false,
@@ -37,6 +43,7 @@ class EnquiryForm extends Component {
   handleSubmit = e => {
     // e.preventDefault()
     this.props.form.validateFieldsAndScroll((err, values) => {
+      console.log(`Handle Submit ::  ${err}`)
       if (!err) {
         fetch("/", {
           method: "POST",
