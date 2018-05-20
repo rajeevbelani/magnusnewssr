@@ -123,7 +123,7 @@ class EnquiryForm extends Component {
               required: true, message: 'Please input your E-mail!',
             }],
           })(
-            <Input />
+            <Input name="form-name" value="footerForm" />
           )}
         </FormItem>
         <FormItem
@@ -133,7 +133,7 @@ class EnquiryForm extends Component {
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: 'Please input your phone number!' }],
           })(
-            <Input style={{ width: '100%' }} />
+            <Input style={{ width: '100%' }} name="form-name" value="footerForm" />
           )}
         </FormItem>
         <FormItem
@@ -150,7 +150,7 @@ class EnquiryForm extends Component {
           {getFieldDecorator('nickname', {
             rules: [{ required: false, message: 'Please input your nickname!', whitespace: true }],
           })(
-            <Input />
+            <Input name="form-name" value="footerForm" />
           )}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
