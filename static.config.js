@@ -212,7 +212,7 @@ export default {
             />
             <script />
 
-            <script
+            {/* <script
               dangerouslySetInnerHTML={{ __html: `
                 !function(f,b,e,v,n,t,s)
                 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -233,13 +233,13 @@ export default {
           <img height="1" width="1"
           src="https://www.facebook.com/tr?id=377975152632074&ev=PageView&noscript=1" />
             ` }}
-            />
+            /> */}
             <noscript />
             <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0073/9822.js" async="async" />
             {renderMeta.styleTags}
           </Head>
           <Body>
-            <script
+            {/* <script
               dangerouslySetInnerHTML={{ __html: `
         window.fbAsyncInit = function() {
           FB.init({
@@ -276,7 +276,7 @@ export default {
             />
             <div className="fb-customerchat"
               page_id="1568850076767195"
-              theme_color="#0084ff" />
+              theme_color="#0084ff" /> */}
             {children}
           </Body>
         </Html>
