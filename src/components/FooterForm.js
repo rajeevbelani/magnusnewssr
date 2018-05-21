@@ -29,6 +29,12 @@ const residences = [{
   }],
 }]
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 class EnquiryForm extends Component {
   state = {
     confirmDirty: false,
@@ -42,7 +48,7 @@ class EnquiryForm extends Component {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: { 'form-name': 'contact', ...this.state },
+      body: encode({ 'form-name': 'contact', ...this.state }),
     })
       .then(() => alert('Success!'))
       .catch(error => alert(error))
