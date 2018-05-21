@@ -50,7 +50,7 @@ class QueryForm extends Component {
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode({ 'form-name': 'freeEnquiryForm', ...this.state }),
+          body: encode({ 'form-name': 'contact1', ...this.state }),
         })
           .then(() => alert('Success!'))
           .catch(error => alert(error))
@@ -128,7 +128,7 @@ class QueryForm extends Component {
     ))
 
     return (
-      <Form name="freeEnquiryForm" className="footerForm" data-netlify="true" onSubmit={this.handleSubmit}>
+      <Form name="contact1" className="footerForm" data-netlify="true" onSubmit={this.handleSubmit}>
         <FormItem
           {...formItemLayout}
           label="E-mail"
