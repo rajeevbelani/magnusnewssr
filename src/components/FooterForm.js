@@ -45,19 +45,17 @@ class EnquiryForm extends Component {
   };
   handleSubmit = e => {
     e.preventDefault()
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...this.state }),
+    this.props.form.validateFieldsAndScroll((err, values) => {
+      if (!err) {
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({ 'form-name': 'contact', ...this.state }),
+        })
+          .then(() => alert('Success!'))
+          .catch(error => alert(error))
+      }
     })
-      .then(() => alert('Success!'))
-      .catch(error => alert(error))
-
-    // this.props.form.validateFieldsAndScroll((err, values) => {
-    //   if (!err) {
-    //     console.log('Received values of form: ', values)
-    //   }
-    // })
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value })

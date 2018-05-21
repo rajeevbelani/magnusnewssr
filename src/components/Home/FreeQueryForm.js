@@ -29,19 +29,37 @@ const residences = [{
   }],
 }]
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 class QueryForm extends Component {
   state = {
     confirmDirty: false,
     autoCompleteResult: [],
+    phone: '',
+    email: '',
+    message: '',
   };
   handleSubmit = e => {
     e.preventDefault()
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values)
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({ 'form-name': 'freeEnquiryForm', ...this.state }),
+        })
+          .then(() => alert('Success!'))
+          .catch(error => alert(error))
       }
     })
   }
+
+  handleChange = e => this.setState({ [e.target.name]: e.target.value })
+
   handleConfirmBlur = e => {
     const value = e.target.value
     this.setState({ confirmDirty: this.state.confirmDirty || !!value })
@@ -110,7 +128,7 @@ class QueryForm extends Component {
     ))
 
     return (
-      <Form name="freeEnquiryForm" className="footerForm">
+      <Form name="freeEnquiryForm" className="footerForm" data-netlify="true" onSubmit={this.handleSubmit}>
         <FormItem
           {...formItemLayout}
           label="E-mail"
@@ -122,7 +140,7 @@ class QueryForm extends Component {
               required: true, message: 'Please input your E-mail!',
             }],
           })(
-            <Input name="email" />
+            <Input name="email" onChange={this.handleChange} />
           )}
         </FormItem>
         <FormItem
@@ -132,7 +150,7 @@ class QueryForm extends Component {
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: 'Please input your phone number!' }],
           })(
-            <Input name="phone" style={{ width: '100%' }} />
+            <Input name="phone" onChange={this.handleChange} style={{ width: '100%' }} />
           )}
         </FormItem>
         <FormItem
@@ -149,7 +167,7 @@ class QueryForm extends Component {
           {getFieldDecorator('nickname', {
             rules: [{ required: false, message: 'Please input your nickname!', whitespace: true }],
           })(
-            <Input name="message" />
+            <Input name="message" onChange={this.handleChange} />
           )}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
