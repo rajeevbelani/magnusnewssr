@@ -142,7 +142,7 @@ class EnquiryForm extends Component {
               required: true, message: 'Please input your E-mail!',
             }],
           })(
-            <Input name="email" value={email} />
+            <Input name="email" value={email} onChange={this.handleChange} />
           )}
         </FormItem>
         <FormItem
@@ -152,7 +152,7 @@ class EnquiryForm extends Component {
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: 'Please input your phone number!' }],
           })(
-            <Input name="phone" value={phone} style={{ width: '100%' }} />
+            <Input name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
           )}
         </FormItem>
         <FormItem
@@ -169,7 +169,7 @@ class EnquiryForm extends Component {
           {getFieldDecorator('nickname', {
             rules: [{ required: false, message: 'Please input your nickname!', whitespace: true }],
           })(
-            <Input name="message" value={message} />
+            <Input name="message" value={message} onChange={this.handleChange} />
           )}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
