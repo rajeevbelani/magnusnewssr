@@ -29,11 +29,9 @@ const residences = [{
   }],
 }]
 
-const encode = (data) => {
-  return Object.keys(data)
+const encode = data => Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-}
+      .join("&")
 
 class EnquiryForm extends Component {
   state = {
@@ -128,6 +126,12 @@ class EnquiryForm extends Component {
 
     return (
       <Form name="contact" method="post" data-netlify="true" className="footerForm" onSubmit={this.handleSubmit}>
+
+        {/* <p hidden>
+          <label>
+              Don’t fill this out: <input name="bot-field" onChange={this.handleChange} />
+          </label>
+        </p> */}
         <FormItem
           {...formItemLayout}
           label="E-mail"

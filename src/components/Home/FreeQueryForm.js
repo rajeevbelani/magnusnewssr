@@ -128,7 +128,7 @@ class QueryForm extends Component {
     ))
 
     return (
-      <Form name="contact1" className="footerForm" onSubmit={this.handleSubmit}>
+      <Form name="contact1" data-netlify="true" className="footerForm" onSubmit={this.handleSubmit}>
         <FormItem
           {...formItemLayout}
           label="E-mail"
