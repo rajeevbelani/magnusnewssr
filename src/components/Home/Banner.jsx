@@ -9,6 +9,7 @@ import BannerSVGAnim from './BannerSVGAnim'
 import { enquireScreen } from '../../layout/utils'
 import FreeQueryForm from './FreeQueryForm'
 import Hidden from 'material-ui/Hidden'
+import FooterForm from '../FooterForm'
 
 
 let isMobile = false
@@ -120,7 +121,7 @@ class Banner extends Component {
           //   </Button>,
           // ]}
         >
-          <FreeQueryForm />
+          <FooterForm />
         </Modal>
       </div>
     )
