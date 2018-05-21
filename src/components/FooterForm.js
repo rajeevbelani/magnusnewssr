@@ -33,15 +33,28 @@ class EnquiryForm extends Component {
   state = {
     confirmDirty: false,
     autoCompleteResult: [],
+    phone: '',
+    email: '',
+    message: '',
   };
   handleSubmit = e => {
     e.preventDefault()
-    this.props.form.validateFieldsAndScroll((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values)
-      }
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: { 'form-name': 'contact', ...this.state },
     })
+      .then(() => alert('Success!'))
+      .catch(error => alert(error))
+
+    // this.props.form.validateFieldsAndScroll((err, values) => {
+    //   if (!err) {
+    //     console.log('Received values of form: ', values)
+    //   }
+    // })
   }
+
+  handleChange = e => this.setState({ [e.target.name]: e.target.value })
   handleConfirmBlur = e => {
     const value = e.target.value
     this.setState({ confirmDirty: this.state.confirmDirty || !!value })
@@ -72,7 +85,7 @@ class EnquiryForm extends Component {
   }
   render () {
     const { getFieldDecorator } = this.props.form
-    const { autoCompleteResult } = this.state
+    const { autoCompleteResult, phone, email, message } = this.state
 
     const formItemLayout = {
       labelCol: {
@@ -110,7 +123,7 @@ class EnquiryForm extends Component {
     ))
 
     return (
-      <Form name="contact" method="post" data-netlify="true" className="footerForm">
+      <Form name="contact" method="post" data-netlify="true" className="footerForm" onSubmit={this.handleSubmit}>
         <FormItem
           {...formItemLayout}
           label="E-mail"
@@ -123,7 +136,7 @@ class EnquiryForm extends Component {
               required: true, message: 'Please input your E-mail!',
             }],
           })(
-            <Input name="form-name" value="contact" />
+            <Input name="email" value={email} />
           )}
         </FormItem>
         <FormItem
@@ -133,7 +146,7 @@ class EnquiryForm extends Component {
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: 'Please input your phone number!' }],
           })(
-            <Input name="form-name" value="contact" style={{ width: '100%' }} />
+            <Input name="phone" value={phone} style={{ width: '100%' }} />
           )}
         </FormItem>
         <FormItem
@@ -150,7 +163,7 @@ class EnquiryForm extends Component {
           {getFieldDecorator('nickname', {
             rules: [{ required: false, message: 'Please input your nickname!', whitespace: true }],
           })(
-            <Input name="form-name" value="contact" />
+            <Input name="message" value={message} />
           )}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
