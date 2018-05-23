@@ -47,12 +47,12 @@ class MagnusApp extends React.Component {
     return (
       <Provider store={store}>
         <Router>
-          <Box style={{ 'width': '100%' }}>
+          <div style={{ 'width': '100%' }}>
             <ResponsiveHeader />
             <div style={{ 'font-family': 'Avenir' }}>
                 {/* <Header /> */}
                   <CssBaseline />
-                  <Box pad="none"
+                  <div pad="none"
                     margin="none">
                     <Switch>
                     <Route path="/packages/health/delhiagra" component={DelhiAgraPackage} />
@@ -62,7 +62,7 @@ class MagnusApp extends React.Component {
                     {/* <Route path=""> */}
                     <Routes />
                     </Switch>
-                  </Box>
+                  </div>
                   <Footer />
                 {/* <Footer style={{ textAlign: 'center', background: '#888' }}>
                       Copyright Magnus Medi
@@ -76,7 +76,7 @@ class MagnusApp extends React.Component {
                   </Row>
                 </Affix>
             </Hidden>
-          </Box>
+          </div>
         </Router>
       </Provider>
     )

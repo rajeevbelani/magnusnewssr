@@ -289,6 +289,13 @@ export default {
               page_id="1568850076767195"
               theme_color="#0084ff" />
             {children}
+            <script dangerouslySetInnerHTML={{ __html: `window.lazyLoadOptions = {
+                threshold: 50
+              };
+              window.addEventListener('LazyLoad::Initialized', function (e) {
+                console.log(e.detail.instance);
+              }, false);` }} />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.0.1/lazyload.min.js" />
           </Body>
         </Html>
       )
