@@ -24,6 +24,7 @@ const webpack = require('webpack')
 
 //
 export default {
+  siteRoot: 'http://www.magnusmedi.com',
   getSiteData: () => ({
     title: 'React Static',
   }),
