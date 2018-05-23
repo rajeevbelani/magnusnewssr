@@ -23,6 +23,7 @@ import SpeedDial from './components/SpeedDial';
 import DelhiAgraPackage from './containers/Packages/DelhiAgraPackage'
 import MumbaiPackage from './containers/Packages/MumbaiPackage'
 import WellnessPackage from './containers/Packages/WellnessPackage'
+import ThankYou from './containers/ThankYou'
 
 
 injectGlobal`
@@ -57,6 +58,8 @@ class MagnusApp extends React.Component {
                     <Route path="/packages/health/delhiagra" component={DelhiAgraPackage} />
                     <Route path="/packages/health/businesshealth" component={MumbaiPackage} />
                     <Route path="/packages/health/wellness" component={WellnessPackage} />
+                    <Route path="/thankyou" component={ThankYou} />
+                    {/* <Route path=""> */}
                     <Routes />
                     </Switch>
                   </Box>

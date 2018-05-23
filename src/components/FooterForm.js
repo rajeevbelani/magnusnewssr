@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd'
+import { Redirect } from 'react-static';
 
 const FormItem = Form.Item
 const Option = Select.Option
@@ -43,6 +44,7 @@ class EnquiryForm extends Component {
   };
   handleSubmit = e => {
     e.preventDefault()
+    // <Redirect to='/dashboard' />
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         fetch('/', {
@@ -50,7 +52,7 @@ class EnquiryForm extends Component {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: encode({ 'form-name': 'contact', ...this.state }),
         })
-          .then(() => alert('Success!'))
+          .then(() => Redirect('/thankyou'))
           .catch(error => alert(error))
       }
     })
