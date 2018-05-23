@@ -246,7 +246,7 @@ export default {
             ` }}
             />
             <noscript />
-            <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0073/9822.js" async="async" />
+            {/* <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0073/9822.js" async="async" /> */}
             {renderMeta.styleTags}
           </Head>
           <Body>

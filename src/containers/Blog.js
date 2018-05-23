@@ -23,7 +23,9 @@ export default withRouteData(({ posts, pageTitle }) => (
   <Box pad="small" colorIndex="light-2">
     <Head>
       <meta charSet="UTF-8" />
-      <title>Medical Tourism in India, Medical treatment at Affordable Price, Travel with Magnus Medi, </title>
+      <title>Blogs on Medical treatment in India, Know more about medical travel to India</title>
+      <meta name="description" content="India is one of the best destinations for advanced medical procedures and treatment of various diseases at an affordable price. To know more contact us at Magnus Medi." />
+      <meta name="keywords" content="Medical Health news, blogs on medical tourism, healthcare information" />
     </Head>
     <Section pad="large"
       justify="center"
