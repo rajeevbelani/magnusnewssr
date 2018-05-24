@@ -1,29 +1,25 @@
-import React from 'react'
-import { Loading, Router, Switch, Route, Link } from 'react-static'
-import { injectGlobal } from 'styled-components'
-import { hot } from 'react-hot-loader'
-import CssBaseline from 'material-ui/CssBaseline'
-import App from 'grommet/components/App'
-// import Header from './containers/Header'
-import { Provider } from 'react-redux'
-import '../node_modules/grommet-css'
-import Box from 'grommet/components/Box'
-import Routes from 'react-static-routes'
-import Hidden from 'material-ui/Hidden'
-import store from './store'
-import Image from 'grommet/components/Image'
-import Button from 'material-ui/Button'
-import ResponsiveHeader from './components/ResponsiveHeader'
-// import Footer from './components/Footer'
-import Footer from './layout/Footer'
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Hidden from '@material-ui/core/Hidden';
 // const { Sider, Content } = Layout
-import { Button, Layout, Menu, Icon, Affix, Row, Col } from 'antd'
-import './theme/style.js'
-import SpeedDial from './components/SpeedDial';
-import DelhiAgraPackage from './containers/Packages/DelhiAgraPackage'
-import MumbaiPackage from './containers/Packages/MumbaiPackage'
-import WellnessPackage from './containers/Packages/WellnessPackage'
-import ThankYou from './containers/ThankYou'
+import { Affix, Col, Row } from 'antd';
+import Image from 'grommet/components/Image';
+import React from 'react';
+import { hot } from 'react-hot-loader';
+// import Header from './containers/Header'
+import { Provider } from 'react-redux';
+import { Link, Route, Router, Switch } from 'react-static';
+import Routes from 'react-static-routes';
+import { injectGlobal } from 'styled-components';
+import '../node_modules/grommet-css';
+import ResponsiveHeader from './components/ResponsiveHeader';
+import DelhiAgraPackage from './containers/Packages/DelhiAgraPackage';
+import MumbaiPackage from './containers/Packages/MumbaiPackage';
+import WellnessPackage from './containers/Packages/WellnessPackage';
+import ThankYou from './containers/ThankYou';
+// import Footer from './components/Footer'
+import Footer from './layout/Footer';
+import store from './store';
+import './theme/style.js';
 
 
 injectGlobal`

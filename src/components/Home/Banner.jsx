@@ -1,15 +1,11 @@
-import React, { Component } from 'react'
-import QueueAnim from 'rc-queue-anim'
-import TweenOne from 'rc-tween-one'
-import YouTube from 'react-youtube'
-import { Button, Modal, Form } from 'antd'
-import { Link } from 'react-static'
-// import { FormattedMessage } from 'react-intl'
-import BannerSVGAnim from './BannerSVGAnim'
-import { enquireScreen } from '../../layout/utils'
-import FreeQueryForm from './FreeQueryForm'
-import Hidden from 'material-ui/Hidden'
-import FooterForm from '../FooterForm'
+import Hidden from '@material-ui/core/Hidden';
+import { Button, Form, Modal } from 'antd';
+import QueueAnim from 'rc-queue-anim';
+import TweenOne from 'rc-tween-one';
+import React, { Component } from 'react';
+import YouTube from 'react-youtube';
+import { enquireScreen } from '../../layout/utils';
+import FooterForm from '../FooterForm';
 
 
 let isMobile = false

@@ -1,24 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { withStyles } from 'material-ui/styles'
+import Divider from '@material-ui/core/Divider';
+import Hidden from '@material-ui/core/Hidden';
+import List from '@material-ui/core/List';
+import { withStyles } from '@material-ui/core/styles';
+import { Affix, Menu } from 'antd';
+import PropTypes from 'prop-types';
 // import Drawer from 'material-ui/Drawer'
-import Drawer from 'rc-drawer-menu'
-import { Link, Router, withRouter } from 'react-static'
-import AppBar from 'material-ui/AppBar'
-import Toolbar from 'material-ui/Toolbar'
-import List from 'material-ui/List'
-import Header from '../layout/Header'
-import PreHeader from '../layout/PreHeader'
-import 'rc-drawer-menu/assets/index.css'
-import Typography from 'material-ui/Typography'
-import IconButton from 'material-ui/IconButton'
-import Hidden from 'material-ui/Hidden'
+import Drawer from 'rc-drawer-menu';
+import 'rc-drawer-menu/assets/index.css';
+import React from 'react';
+import { Link } from 'react-static';
 // import Header from '../layout/Header'
-import styled, { injectGlobal } from 'styled-components'
-import Divider from 'material-ui/Divider'
-import MenuIcon from 'material-ui-icons/Menu'
-import Routes from 'react-static-routes'
-import { Layout, Menu, Icon, Affix } from 'antd'
+import styled, { injectGlobal } from 'styled-components';
+import Header from '../layout/Header';
+import PreHeader from '../layout/PreHeader';
 // import { mailFolderListItems, otherMailFolderListItems } from './tileData'
 
 const drawerWidth = 240
