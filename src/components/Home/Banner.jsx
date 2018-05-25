@@ -111,11 +111,11 @@ class Banner extends Component {
             <Hidden mdUp>
               {/* <YouTube videoId="REZelbp272g" opts={opts} /> */}
               {/* <img src={introVideo} /> */}
-              <IntroVideo />
+              {/* <IntroVideo /> */}
             </Hidden>
             <Hidden mdDown>
               {/* <YouTube videoId="REZelbp272g" /> */}
-              <IntroVideo />
+              {/* <IntroVideo /> */}
             </Hidden>
           </TweenOne>
         )}

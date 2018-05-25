@@ -30,13 +30,7 @@ class Home extends Component {
         <Banner />
         <Features />
         <OurAssociates />
-        {/* <FloatingActionButton /> */}
         <PatientStories patientSnippets={patientSnippets} />
-        {/* <Card title="Welcome to" style={{ width: '100%' }} bodyStyle={{ padding: 0 }}>
-        <div className="custom-image">
-          <img alt="react-static" width="100%" src={logoImg} />
-        </div>
-      </Card> */}
       </div>
     </div>)
   }
