@@ -12,6 +12,10 @@ class Home extends Component {
   //   super()
   // }
 
+  componentDidMount () {
+    // window.startLazyLoad()
+  }
+
   render () {
     const patientSnippets = this.props.homepageData.snippets
 
@@ -37,7 +41,6 @@ class Home extends Component {
     </div>)
   }
 }
-
 // export default withSiteData(() => (
 
 // ))

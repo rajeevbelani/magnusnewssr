@@ -28,6 +28,7 @@ export default {
   getSiteData: () => ({
     title: 'React Static',
   }),
+  preact: true,
   // extractCssChunks: true,
   getRoutes: async () => {
     const { data: posts } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=blog')
@@ -209,9 +210,14 @@ export default {
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.0.1/lazyload.min.js" />
-            <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.1/lazyload.js" />
             <meta name="msapplication-TileColor" content="#da532c" />
             <meta name="theme-color" content="#ffffff" />
+            <script dangerouslySetInnerHTML={{ __html: `
+              function startLazyLoad() {
+                alert('starting lazy load);
+                new LazyLoad();
+              }
+              ` }} />
             <script
               dangerouslySetInnerHTML={{ __html: `
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -291,7 +297,7 @@ export default {
               page_id="1568850076767195"
               theme_color="#0084ff" />
             {children}
-            <script dangerouslySetInnerHTML={{ __html: 'LazyLoad();' }} />
+            <script dangerouslySetInnerHTML={{ __html: 'startLazyLoad();' }} />
           </Body>
         </Html>
       )

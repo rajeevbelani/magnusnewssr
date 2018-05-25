@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import Anchor from 'grommet/components/Anchor';
+import Card from 'grommet/components/Card';
+import Heading from 'grommet/components/Heading';
+import Image from 'grommet/components/Image';
+import Label from 'grommet/components/Label';
+import LinkNextIcon from 'grommet/components/icons/base/LinkNext';
+import React, { Component } from 'react';
+import { Link } from 'react-static';
+import { getBlogImage, getBlogLink, getBlogShortDescription, getBlogTypeString } from '../containers/util';
 
-import Card from 'grommet/components/Card'
-import Heading from 'grommet/components/Heading'
-import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
-import Anchor from 'grommet/components/Anchor'
-import Label from 'grommet/components/Label'
-import Image from 'grommet/components/Image'
-import { Link } from 'react-static'
-import { getBlogTypeString, getBlogLink, getBlogShortDescription, getBlogImage } from '../containers/util'
 
 export default class BlogCard extends Component {
   constructor () {
