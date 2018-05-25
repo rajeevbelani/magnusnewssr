@@ -297,7 +297,7 @@ export default {
               page_id="1568850076767195"
               theme_color="#0084ff" />
             {children}
-            <script dangerouslySetInnerHTML={{ __html: 'startLazyLoad();' }} />
+            <script dangerouslySetInnerHTML={{ __html: 'new LazyLoad();' }} />
           </Body>
         </Html>
       )
