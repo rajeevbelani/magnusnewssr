@@ -1,10 +1,8 @@
-import React from 'react'
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack'
-import Parallax from 'rc-scroll-anim/lib/ScrollParallax'
-import QueueAnim from 'rc-queue-anim'
-import TweenOne from 'rc-tween-one'
-import PropTypes from 'prop-types'
-import { Avatar } from 'antd'
+import { Avatar } from 'antd';
+import PropTypes from 'prop-types';
+import QueueAnim from 'rc-queue-anim';
+import TweenOne from 'rc-tween-one';
+import React from 'react';
 
 const TweenOneGroup = TweenOne.TweenOneGroup
 

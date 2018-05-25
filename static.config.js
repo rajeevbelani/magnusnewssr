@@ -28,7 +28,7 @@ export default {
   getSiteData: () => ({
     title: 'React Static',
   }),
-  extractCssChunks: true,
+  // extractCssChunks: true,
   getRoutes: async () => {
     const { data: posts } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=blog')
     const { data: doctorInterview } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=doctor_interview')
@@ -208,6 +208,8 @@ export default {
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.0.1/lazyload.min.js" />
+            <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.1/lazyload.js" />
             <meta name="msapplication-TileColor" content="#da532c" />
             <meta name="theme-color" content="#ffffff" />
             <script
@@ -289,13 +291,7 @@ export default {
               page_id="1568850076767195"
               theme_color="#0084ff" />
             {children}
-            <script dangerouslySetInnerHTML={{ __html: `window.lazyLoadOptions = {
-                threshold: 50
-              };
-              window.addEventListener('LazyLoad::Initialized', function (e) {
-                console.log(e.detail.instance);
-              }, false);` }} />
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.0.1/lazyload.min.js" />
+            <script dangerouslySetInnerHTML={{ __html: 'LazyLoad();' }} />
           </Body>
         </Html>
       )
