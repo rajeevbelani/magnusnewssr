@@ -3,11 +3,30 @@ import { Button, Form, Modal } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import React, { Component } from 'react';
+import universal from 'react-universal-component';
 import { enquireScreen } from '../../layout/utils';
-import introVideo from '../../magnus_intro_video.webp';
 import FooterForm from '../FooterForm';
 
 let isMobile = false
+
+const Failed = () => (
+  <div style={{ color: 'red' }}>
+    <h1>   </h1>
+  </div>
+)
+
+const Loading = () => (
+  <div style={{ color: 'yellow' }}>
+    <h1>  </h1>
+  </div>
+)
+
+const IntroVideo = universal(import('./Video'), {
+  loading: Loading,
+  error: Failed,
+})
+
+export const preloadMyComponent = () => IntroVideo.preload()
 
 class Banner extends Component {
   constructor (props) {
@@ -91,11 +110,12 @@ class Banner extends Component {
             {/* <img src="https://www.fraserinstitute.org/sites/default/files/styles/large/public/comparing-performance-of-universal-health-care-countries-2017-web.jpg?itok=QnM2pgxO" /> */}
             <Hidden mdUp>
               {/* <YouTube videoId="REZelbp272g" opts={opts} /> */}
-              <img src={introVideo} />
+              {/* <img src={introVideo} /> */}
+              <IntroVideo />
             </Hidden>
             <Hidden mdDown>
               {/* <YouTube videoId="REZelbp272g" /> */}
-              <img src={introVideo} />
+              <IntroVideo />
             </Hidden>
           </TweenOne>
         )}
