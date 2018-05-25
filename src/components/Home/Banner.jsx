@@ -3,10 +3,9 @@ import { Button, Form, Modal } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import React, { Component } from 'react';
-import YouTube from 'react-youtube';
 import { enquireScreen } from '../../layout/utils';
+import introVideo from '../../magnus_intro_video.webp';
 import FooterForm from '../FooterForm';
-
 
 let isMobile = false
 
@@ -50,18 +49,13 @@ class Banner extends Component {
     }
     return (
       <div className="banner-wrapper">
-        {isMobile && (
+        {/* {isMobile && (
           <TweenOne animation={{ opacity: 1 }} className="banner-image-wrapper">
             <div className="home-banner-image">
               <YouTube videoId="REZelbp272g" opts={opts} />
-              {/* <img src="https://www.fraserinstitute.org/sites/default/files/styles/large/public/comparing-performance-of-universal-health-care-countries-2017-web.jpg?itok=QnM2pgxO" width="100%" /> */}
-              {/* <img alt="banner"
-              src="https://gw.alipayobjects.com/zos/rmsportal/rqKQOpnMxeJKngVvulsF.svg"
-              width="100%"w
-            /> */}
             </div>
           </TweenOne>
-        )}
+        )} */}
         <QueueAnim className="banner-title-wrapper" type={isMobile ? 'bottom' : 'right'}>
           <div key="line" className="title-line-wrapper">
             <div className="title-line"
@@ -96,10 +90,12 @@ class Banner extends Component {
             {/* <BannerSVGAnim /> */}
             {/* <img src="https://www.fraserinstitute.org/sites/default/files/styles/large/public/comparing-performance-of-universal-health-care-countries-2017-web.jpg?itok=QnM2pgxO" /> */}
             <Hidden mdUp>
-              <YouTube videoId="REZelbp272g" opts={opts} />
+              {/* <YouTube videoId="REZelbp272g" opts={opts} /> */}
+              <img src={introVideo} />
             </Hidden>
             <Hidden mdDown>
-              <YouTube videoId="REZelbp272g" />
+              {/* <YouTube videoId="REZelbp272g" /> */}
+              <img src={introVideo} />
             </Hidden>
           </TweenOne>
         )}

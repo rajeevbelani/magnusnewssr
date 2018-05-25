@@ -1,81 +1,11 @@
-import React from 'react'
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack'
-import Parallax from 'rc-scroll-anim/lib/ScrollParallax'
-import QueueAnim from 'rc-queue-anim'
-import TweenOne from 'rc-tween-one'
-import PropTypes from 'prop-types'
-import { List, Card, Carousel } from 'antd'
-import kdh from '../../kdh.png'
-import { Avatar } from 'antd'
+import { Avatar, Card } from 'antd';
+import PropTypes from 'prop-types';
+import QueueAnim from 'rc-queue-anim';
+import TweenOne from 'rc-tween-one';
+import React from 'react';
 
 const TweenOneGroup = TweenOne.TweenOneGroup
 const { Meta } = Card
-
-const featuresEN = [
-  {
-    title: ' One Thing',
-    content: 'One thing ka description',
-    src: 'https://gw.alipayobjects.com/zos/rmsportal/VriUmzNjDnjoFoFFZvuh.svg',
-    color: '#13C2C2',
-    shadowColor: 'rgba(19,194,194,.12)',
-  },
-  {
-    title: 'Second Thing',
-    content: 'Uska Description',
-    src: 'https://gw.alipayobjects.com/zos/rmsportal/smwQOoxCjXVbNAKMqvWk.svg',
-    color: '#2F54EB',
-    shadowColor: 'rgba(47,84,235,.12)',
-  },
-  {
-    title: 'Third Thing',
-    content: 'third Ting ka decription',
-    src: 'https://gw.alipayobjects.com/zos/rmsportal/hBbIHzUsSbSxrhoRFYzi.svg',
-    color: '#F5222D',
-    shadowColor: 'rgba(245,34,45,.12)',
-  },
-//   {
-//     title: 'Fourth THing',
-//     content: 'Descriptiomn',
-//     src: 'https://gw.alipayobjects.com/zos/rmsportal/BISfzKcCNCYFmTYcUygW.svg',
-//     color: '#1AC44D',
-//     shadowColor: 'rgba(26,196,77,.12)',
-//   },
-//   {
-//     title: 'Fifth Thing',
-//     content: 'Description',
-//     src: 'https://gw.alipayobjects.com/zos/rmsportal/XxqEexmShHOofjMYOCHi.svg',
-//     color: '#FAAD14',
-//     shadowColor: 'rgba(250,173,20,.12)',
-//   },
-//   {
-//     title: 'Sixth Thing',
-//     content: 'Description',
-//     src: 'https://gw.alipayobjects.com/zos/rmsportal/JsixxWSViARJnQbAAPkI.svg',
-//     color: '#722ED1',
-//     shadowColor: 'rgba(114,46,209,.12)',
-//   },
-//   {
-//     title: 'Best Practice',
-//     content: 'Solid workflow make your code health',
-//     src: 'https://gw.alipayobjects.com/zos/rmsportal/pbmKMSFpLurLALLNliUQ.svg',
-//     color: '#FA8C16',
-//     shadowColor: 'rgba(250,140,22,.12)',
-//   },
-//   {
-//     title: 'Mock Data',
-//     content: 'Easy to use mock development solution',
-//     src: 'https://gw.alipayobjects.com/zos/rmsportal/aLQyKyUyssIUhHTZqCIb.svg',
-//     color: '#EB2F96',
-//     shadowColor: 'rgba(235,45,150,.12)',
-//   },
-//   {
-//     title: 'UI Test',
-//     content: 'Fly safely with unit test and e2e test',
-//     src: 'https://gw.alipayobjects.com/zos/rmsportal/RpJIQitGbSCHwLMimybX.svg',
-//     color: '#1890FF',
-//     shadowColor: 'rgba(24,144,255,.12)',
-//   },
-]
 
 const pointPos = [
   { x: -30, y: -10 },
@@ -143,18 +73,6 @@ const data = [
     image: '/images/hospitals/wockhardt.png',
     title: 'Wockhardt Hospital',
   },
-  // {
-  //   image: 'https://mk0similima57rg8gkp8.kinstacdn.com/wp-content/uploads/2016/03/ambani.png',
-  //   title: 'Title 4',
-  // },
-  // {
-  //   image: 'https://mk0similima57rg8gkp8.kinstacdn.com/wp-content/uploads/2016/03/ambani.png',
-  //   title: 'Title 5',
-  // },
-  // {
-  //   image: 'https://mk0similima57rg8gkp8.kinstacdn.com/wp-content/uploads/2016/03/ambani.png',
-  //   title: 'Title 6',
-  // },
 ]
 
 class OurAssociates extends React.PureComponent {
