@@ -29,7 +29,6 @@ const data = [
     image: '/images/hospitals/artemis.jpg',
     title: 'Artemis Hospital',
   },
-  
   {
     image: '/images/hospitals/fortis.jpeg',
     title: 'Fortis Hospital',
