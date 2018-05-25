@@ -1,15 +1,10 @@
-import React, { Component } from 'react'
-import { withSiteData, Head } from 'react-static'
-import { Card } from 'antd'
-import logoImg from '../logo.png'
-import Banner from '../components/Home/Banner'
-import Features from '../components/Home/Features'
-import HospitalList from '../components/HospitalList'
-import OurAssociates from '../components/Home/OurAssociates'
-import { withRouteData, Head } from 'react-static'
+import React, { Component } from 'react';
+import { Head, withRouteData } from 'react-static';
+import Banner from '../components/Home/Banner';
+import Features from '../components/Home/Features';
+import OurAssociates from '../components/Home/OurAssociates';
 // import PatientStories from '../components/Home/PatientStoriesCarousel'
-import PatientStories from '../components/Home/PatientStories'
-import enquireScreen from '../layout/utils'
+import PatientStories from '../components/Home/PatientStories';
 // import FloatingActionButton from '../components/FloatingContactButton'
 
 class Home extends Component {
@@ -23,9 +18,9 @@ class Home extends Component {
     return (<div style={{ ul: '0px' }}>
       <Head>
         <meta charSet="UTF-8" />
-        <title>Blogs on Medical treatment in India, Know more about medical travel to India</title>
-        <meta name="description" content="India is one of the best destinations for advanced medical procedures and treatment of various diseases at an affordable price. To know more contact us at Magnus Medi." />
-        <meta name="keywords" content="Medical Health news, blogs on medical tourism, healthcare information" />
+        <title>Medical Tourism in India, Medical treatment at Affordable Price, Travel with Magnus Medi</title>
+        <meta name="description" content="Magnus Medi helps you to get the best treatment at an affordable price by connecting you to best hospitals and doctors in India. It assists you in your medical journey to India by providing multiple opinions, hotels and travel facilities." />
+        <meta name="keywords" content="Best Medical tourism company in India, Healthcare tourism in India, Medical Travel Assistance, Medical tour facilitator, Affordable price for medical treatment in India, Medical Care, multiple opinions from doctor, free quotes, Enquiry" />
       </Head>
       <div>
         <Banner />
