@@ -209,15 +209,10 @@ export default {
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-            <script async src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.0.1/lazyload.min.js" />
+            {/* <script async src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.0.1/lazyload.min.js" /> */}
             <meta name="msapplication-TileColor" content="#da532c" />
             <meta name="theme-color" content="#ffffff" />
-            <script dangerouslySetInnerHTML={{ __html: `
-              function startLazyLoad() {
-                console.log('Inside Start Lazy Load)
-                new LazyLoad();
-              }
-              ` }} />
+            
             <script
               dangerouslySetInnerHTML={{ __html: `
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -297,7 +292,6 @@ export default {
               page_id="1568850076767195"
               theme_color="#0084ff" />
             {children}
-            <script dangerouslySetInnerHTML={{ __html: 'new LazyLoad();' }} />
           </Body>
         </Html>
       )
