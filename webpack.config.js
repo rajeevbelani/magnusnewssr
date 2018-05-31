@@ -31,7 +31,7 @@
 * */
 
 const convPaths = require('convert-tsconfig-paths-to-webpack-aliases').default
-
+const ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
 // Needs to be valid JSON. All comments in tsconfig.json must be removed.
 const tsconfig = require('./tsconfig.json')
 
@@ -39,6 +39,26 @@ const aliases = convPaths(tsconfig)
 
 // Consumable std. Webpack Export
 module.exports = {
+
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ExtractCssChunks.extract({
+          use: {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]--[hash:base64:5]',
+            },
+          },
+        }),
+      },
+    ],
+  },
+  plugins: [
+    new ExtractCssChunks(),
+  ],
   resolve: {
     alias: aliases,
   },

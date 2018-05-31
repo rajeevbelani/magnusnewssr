@@ -28,7 +28,6 @@ export default {
   getSiteData: () => ({
     title: 'React Static',
   }),
-  
   // extractCssChunks: true,
   getRoutes: async () => {
     const { data: posts } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=blog')

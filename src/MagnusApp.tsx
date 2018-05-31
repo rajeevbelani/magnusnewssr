@@ -12,6 +12,7 @@ import Routes from 'react-static-routes';
 import { injectGlobal } from 'styled-components';
 import '../node_modules/grommet-css';
 import ResponsiveHeader from './components/ResponsiveHeader';
+import AppLinks from './containers/AppLinks';
 import DelhiAgraPackage from './containers/Packages/DelhiAgraPackage';
 import MumbaiPackage from './containers/Packages/MumbaiPackage';
 import WellnessPackage from './containers/Packages/WellnessPackage';
@@ -51,6 +52,7 @@ class MagnusApp extends React.Component {
                   <div pad="none"
                     margin="none">
                     <Switch>
+                    <Route path="/landing/app" component={AppLinks} />  
                     <Route path="/packages/health/delhiagra" component={DelhiAgraPackage} />
                     <Route path="/packages/health/businesshealth" component={MumbaiPackage} />
                     <Route path="/packages/health/wellness" component={WellnessPackage} />

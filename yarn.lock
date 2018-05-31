@@ -3484,6 +3484,17 @@ extract-css-chunks-webpack-plugin@^2.0.18:
     style-loader "^0.18.2"
     webpack-sources "^1.0.1"
 
+extract-css-chunks-webpack-plugin@^2.0.19:
+  version "2.0.19"
+  resolved "https://registry.yarnpkg.com/extract-css-chunks-webpack-plugin/-/extract-css-chunks-webpack-plugin-2.0.19.tgz#a2babd7f51568165944f5ed4816bcd4bf84f5bbb"
+  dependencies:
+    ajv "4.11.2"
+    async "^2.5.0"
+    loader-utils "^1.1.0"
+    schema-utils "^0.3.0"
+    style-loader "^0.18.2"
+    webpack-sources "^1.0.1"
+
 extract-hoc-compose@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/extract-hoc-compose/-/extract-hoc-compose-0.0.1.tgz#8b44d577160513d12d13fb97ed4d7e3eb3395e3b"
@@ -7371,9 +7382,16 @@ react-transition-group@^2.2.1:
     prop-types "^15.5.8"
     warning "^3.0.0"
 
-react-universal-component@^2.8.0, react-universal-component@^2.8.1:
+react-universal-component@^2.8.1:
   version "2.8.4"
   resolved "https://registry.yarnpkg.com/react-universal-component/-/react-universal-component-2.8.4.tgz#775aa2ddec6fc3d86389e50a57a1b8efc028f4dd"
+  dependencies:
+    hoist-non-react-statics "^2.2.1"
+    prop-types "^15.5.10"
+
+react-universal-component@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/react-universal-component/-/react-universal-component-2.9.0.tgz#75e8d418e6611e43cdbabe5a6c5dab8870c12e30"
   dependencies:
     hoist-non-react-statics "^2.2.1"
     prop-types "^15.5.10"
