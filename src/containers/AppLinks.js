@@ -1,6 +1,6 @@
 
-import React from 'react';
-
+import React from 'react'
+import AppCard from '../components/AppCard'
 // Example of using paths alias via tsconfig.json to easily re-use legacy code
 // Also, use TypeScript and JavaScript interchangeably.
 
@@ -8,6 +8,7 @@ import React from 'react';
 
 export default () => (
   <div>
-    <a href="https://drive.google.com/file/d/1uvpm87djD_naFHKByASHZ_WNzQDcgGTd/view">Click Here to download app </a>
+    <AppCard />
+    {/* <a href="https://drive.google.com/file/d/1uvpm87djD_naFHKByASHZ_WNzQDcgGTd/view">Click Here to download app </a> */}
   </div>
 )
