@@ -52,7 +52,7 @@ class MagnusApp extends React.Component {
                   <div pad="none"
                     margin="none">
                     <Switch>
-                    <Route path="/landing/app" component={AppLinks} />  
+                    <Route path="/landing/apps" component={AppLinks} />  
                     <Route path="/packages/health/delhiagra" component={DelhiAgraPackage} />
                     <Route path="/packages/health/businesshealth" component={MumbaiPackage} />
                     <Route path="/packages/health/wellness" component={WellnessPackage} />

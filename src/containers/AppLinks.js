@@ -8,6 +8,6 @@ import React from 'react';
 
 export default () => (
   <div>
-    <a href="/public/res/magnusmedi.apk">  Click Here to download app </a>
+    <a href="https://drive.google.com/file/d/1uvpm87djD_naFHKByASHZ_WNzQDcgGTd/view">Click Here to download app </a>
   </div>
 )
