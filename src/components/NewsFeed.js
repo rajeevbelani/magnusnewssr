@@ -37,7 +37,7 @@ export default class NewsFeed extends Component {
         justify="center"
         maxCount={noColums}
       >
-        <Box pad="medium">
+        {/* <Box pad="medium">
           <div
             dangerouslySetInnerHTML={{
               __html: `
@@ -45,7 +45,7 @@ export default class NewsFeed extends Component {
               `,
             }}
           />
-        </Box>
+        </Box> */}
         {posts.map(post => (
           <Box pad="medium">
             { getMappedTypeForPost(post) === 'TYPE_BLOG' && <BlogCard post={post} showDescription={showDesc} /> }
