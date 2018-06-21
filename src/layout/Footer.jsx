@@ -39,10 +39,10 @@ class Footer extends React.Component {
                   <h1>Address</h1>
                   <h2>HEAD OFFICE</h2>
                   <p>Magnus Meditourism Private Limited<br />
-                  27, 1st Floor, Jai Hind Cottage <br />
-                  Shahaji raje Marg, <br />
-                  Vile Parle (East) <br />
-                  Mumbai 400057 <br />
+                  28, 1st floor, Madhuban Industrial Estate <br />
+                  Off Mahakali Caves Road, Near Paper Box <br />
+                  Andheri (East), <br />
+                  Mumbai 400093, <br />
                   INDIA <br /> </p>
                   <h2>UGANDA OFFICE</h2>
                   <p>Room 33, 3rd floor, Akamwesi Complex, Plot 112, <br />
