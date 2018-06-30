@@ -5,7 +5,6 @@ import FooterForm from '../components/FooterForm'
 
 
 class Footer extends React.Component {
-
   render () {
     return (
       <footer id="footer" className="dark">

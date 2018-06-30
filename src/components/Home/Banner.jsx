@@ -1,4 +1,5 @@
 import Hidden from '@material-ui/core/Hidden';
+import YouTube from 'react-youtube';
 import { Button, Form, Modal } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
@@ -7,26 +8,27 @@ import universal from 'react-universal-component';
 import { enquireScreen } from '../../layout/utils';
 import FooterForm from '../FooterForm';
 
+
 let isMobile = false
 
-const Failed = () => (
-  <div style={{ color: 'red' }}>
-    <h1>   </h1>
-  </div>
-)
+// const Failed = () => (
+//   <div style={{ color: 'red' }}>
+//     <h1>   </h1>
+//   </div>
+// )
 
-const Loading = () => (
-  <div style={{ color: 'yellow' }}>
-    <h1>  </h1>
-  </div>
-)
+// const Loading = () => (
+//   <div style={{ color: 'yellow' }}>
+//     <h1>  </h1>
+//   </div>
+// )
 
-const IntroVideo = universal(import('./Video'), {
-  loading: Loading,
-  error: Failed,
-})
+// const IntroVideo = universal(import('./Video'), {
+//   loading: Loading,
+//   error: Failed,
+// })
 
-export const preloadMyComponent = () => IntroVideo.preload()
+// export const preloadMyComponent = () => IntroVideo.preload()
 
 class Banner extends Component {
   constructor (props) {
@@ -68,13 +70,13 @@ class Banner extends Component {
     }
     return (
       <div className="banner-wrapper">
-        {/* {isMobile && (
+        {isMobile && (
           <TweenOne animation={{ opacity: 1 }} className="banner-image-wrapper">
             <div className="home-banner-image">
               <YouTube videoId="REZelbp272g" opts={opts} />
             </div>
           </TweenOne>
-        )} */}
+        )}
         <QueueAnim className="banner-title-wrapper" type={isMobile ? 'bottom' : 'right'}>
           <div key="line" className="title-line-wrapper">
             <div className="title-line"
@@ -109,13 +111,13 @@ class Banner extends Component {
             {/* <BannerSVGAnim /> */}
             {/* <img src="https://www.fraserinstitute.org/sites/default/files/styles/large/public/comparing-performance-of-universal-health-care-countries-2017-web.jpg?itok=QnM2pgxO" /> */}
             <Hidden mdUp>
-              {/* <YouTube videoId="REZelbp272g" opts={opts} /> */}
+              <YouTube videoId="REZelbp272g" opts={opts} />
               {/* <img src={introVideo} /> */}
-              <IntroVideo />
+              {/* <IntroVideo /> */}
             </Hidden>
             <Hidden mdDown>
-              {/* <YouTube videoId="REZelbp272g" /> */}
-              <IntroVideo />
+              <YouTube videoId="REZelbp272g" />
+              {/* <IntroVideo /> */}
             </Hidden>
           </TweenOne>
         )}
