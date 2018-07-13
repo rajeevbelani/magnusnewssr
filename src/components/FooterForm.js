@@ -158,7 +158,7 @@ class EnquiryForm extends Component {
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: 'Please input your phone number!' }],
           })(
-            <Input addonBefore={prefixSelector} name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
+            <Input name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
           )}
         </FormItem>
         <FormItem
