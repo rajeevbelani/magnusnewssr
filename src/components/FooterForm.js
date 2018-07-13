@@ -59,6 +59,8 @@ class EnquiryForm extends Component {
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
+
+  // handlePhoneNumberChange = e => {}
   handleConfirmBlur = e => {
     const value = e.target.value
     this.setState({ confirmDirty: this.state.confirmDirty || !!value })
