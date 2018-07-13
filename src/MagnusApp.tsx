@@ -48,15 +48,15 @@ class MagnusApp extends React.Component {
             <ResponsiveHeader />
             <div style={{ 'font-family': 'Avenir' }}>
                 {/* <Header /> */}
-                  <CssBaseline />
+                  {/* <CssBaseline /> */}
                   <div pad="none"
                     margin="none">
                     <Switch>
-                    <Route path="/landing/apps" component={AppLinks} />  
-                    <Route path="/packages/health/delhiagra" component={DelhiAgraPackage} />
-                    <Route path="/packages/health/businesshealth" component={MumbaiPackage} />
-                    <Route path="/packages/health/wellness" component={WellnessPackage} />
-                    <Route path="/thankyou" component={ThankYou} />
+                      <Route path="/landing/apps" component={AppLinks} />  
+                      <Route path="/packages/health/delhiagra" component={DelhiAgraPackage} />
+                      <Route path="/packages/health/businesshealth" component={MumbaiPackage} />
+                      <Route path="/packages/health/wellness" component={WellnessPackage} />
+                      <Route path="/thankyou" component={ThankYou} />
                     {/* <Route path=""> */}
                     <Routes />
                     </Switch>
