@@ -121,9 +121,9 @@ class EnquiryForm extends Component {
       },
     }
     const prefixSelector = getFieldDecorator('prefix', {
-      initialValue: '1',
+      initialValue: this.state.phonePrefix,
     })(
-      <Select name="phonePrefix" style={{ width: 70 }} onChange={this.handleChange}>
+      <Select name="phonePrefix" style={{ width: 80 }}>
         {/* {this.getCountryCodes()} */}
         <Option value="1">+1</Option>
         <Option value="234">+234</Option>
@@ -220,7 +220,8 @@ class EnquiryForm extends Component {
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: 'Please input your phone number!' }],
           })(
-            <Input addonBefore={prefixSelector} name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
+            // <Input addonBefore={prefixSelector} name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
+            <Input name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
           )}
         </FormItem>
         <FormItem
