@@ -38,6 +38,7 @@ class EnquiryForm extends Component {
   state = {
     confirmDirty: false,
     autoCompleteResult: [],
+    phonePrefix: '1',
     phone: '',
     email: '',
     message: '',
@@ -45,6 +46,7 @@ class EnquiryForm extends Component {
   handleSubmit = e => {
     e.preventDefault()
     // <Redirect to='/dashboard' />
+    console.log(`THIS STATE ::  ${JSON.stringify(this.state)}`)
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         fetch('/', {
@@ -58,7 +60,10 @@ class EnquiryForm extends Component {
     })
   }
 
-  handleChange = e => this.setState({ [e.target.name]: e.target.value })
+  handleChange = e => {
+    // this.getCountryCodes()
+    this.setState({ [e.target.name]: e.target.value })
+  }
 
   // handlePhoneNumberChange = e => {}
   handleConfirmBlur = e => {
@@ -116,17 +121,74 @@ class EnquiryForm extends Component {
       },
     }
     const prefixSelector = getFieldDecorator('prefix', {
-      initialValue: '86',
+      initialValue: '1',
     })(
-      <Select name="phonePrefix" style={{ width: 70 }}>
+      <Select name="phonePrefix" style={{ width: 70 }} onChange={this.handleChange}>
+        {/* {this.getCountryCodes()} */}
+        <Option value="1">+1</Option>
+        <Option value="234">+234</Option>
+        <Option value="251">+251</Option>
+        <Option value="252">+252</Option>
+        <Option value="253">+253</Option>
+        <Option value="254">+254</Option>
+        <Option value="255">+255</Option>
+        <Option value="256">+256</Option>        
+        <Option value="257">+257</Option>        
+        <Option value="258">+258</Option>        
+        <Option value="259">+259</Option>        
+        <Option value="260">+260</Option>        
+        <Option value="261">+261</Option>        
+        <Option value="262">+262</Option>        
+        <Option value="60">+60</Option>        
+        <Option value="61">+61</Option>        
+        <Option value="62">+62</Option>        
+        <Option value="63">+63</Option>
+        <Option value="64">+64</Option>                        
+        <Option value="65">+65</Option>        
+        <Option value="66">+66</Option>        
+        <Option value="7">+7</Option>        
         <Option value="86">+86</Option>
         <Option value="87">+87</Option>
+        <Option value="8">+880</Option>        
+        <Option value="90">+90</Option>
+        <Option value="91">+91</Option>
+        <Option value="92">+92</Option>
+        <Option value="93">+93</Option>
+        <Option value="94">+94</Option>
+        <Option value="95">+95</Option>
+        <Option value="960">+960</Option>
+        <Option value="961">+961</Option>
+        <Option value="962">+962</Option>
+        <Option value="963">+963</Option>
+        <Option value="964">+964</Option>
+        <Option value="965">+965</Option>
+        <Option value="966">+966</Option>
+        <Option value="967">+967</Option>
+        <Option value="968">+968</Option>
+        <Option value="970">+970</Option>
+        <Option value="971">+971</Option>
+        <Option value="972">+972</Option>
+        <Option value="973">+973</Option>
+        <Option value="974">+974</Option>
+        <Option value="975">+975</Option>
+        <Option value="976">+976</Option>
+        <Option value="977">+977</Option>
+
       </Select>
     )
 
     const websiteOptions = autoCompleteResult.map(website => (
       <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
     ))
+
+
+    function getCountryCodes () {
+      let codesSelector = "";
+      for (let i = 10; i <= 99; i++) {
+        codesSelector += `<Option value="2${i}">+${i}</Option>`
+      }
+      console.log(`CodesSelector ::  ${codesSelector}`)
+    }
 
     return (
       <Form name="contact" method="post" data-netlify="true" className="footerForm" onSubmit={this.handleSubmit}>
@@ -158,7 +220,7 @@ class EnquiryForm extends Component {
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: 'Please input your phone number!' }],
           })(
-            <Input name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
+            <Input addonBefore={prefixSelector} name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
           )}
         </FormItem>
         <FormItem
