@@ -51,8 +51,8 @@ class EnquiryForm extends Component {
     // this.setState({ [e.target.name]: e.target.value })
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log(`Handle Submit ::: ${JSON.stringify(values)}`)
-        console.log(`Handle Submit 111 ::: ${JSON.stringify(this.state)}`)
+        // console.log(`Handle Submit ::: ${JSON.stringify(values)}`)
+        // console.log(`Handle Submit 111 ::: ${JSON.stringify(this.state)}`)
         const phoneNumber = this.state.prefix + this.state.phone
         this.setState({ phone: phoneNumber }, () => {
           console.log(`Handle Submit 222 ::: ${JSON.stringify(this.state)}`)
