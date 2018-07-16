@@ -55,7 +55,7 @@ class EnquiryForm extends Component {
         // console.log(`Handle Submit 111 ::: ${JSON.stringify(this.state)}`)
         const phoneNumber = this.state.prefix + this.state.phone
         this.setState({ phone: phoneNumber }, () => {
-          console.log(`Handle Submit 222 ::: ${JSON.stringify(this.state)}`)
+          // console.log(`Handle Submit 222 ::: ${JSON.stringify(this.state)}`)
           fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -71,12 +71,12 @@ class EnquiryForm extends Component {
 
   handleChange = e => {
     // this.getCountryCodes()
-    console.log(`Handle Change :: ${e.target.name}`)
+    // console.log(`Handle Change :: ${e.target.name}`)
     this.setState({ [e.target.name]: e.target.value })
   }
 
   handlePhoneCodeChange = e => {
-    console.log(`Handle PHone Code Change ::  ${JSON.stringify(e)}`)
+    // console.log(`Handle PHone Code Change ::  ${JSON.stringify(e)}`)
     this.setState({ prefix: e })
   }
   handleConfirmBlur = e => {
@@ -200,7 +200,7 @@ class EnquiryForm extends Component {
       for (let i = 10; i <= 99; i++) {
         codesSelector += `<Option value="2${i}">+${i}</Option>`
       }
-      console.log(`CodesSelector ::  ${codesSelector}`)
+      // console.log(`CodesSelector ::  ${codesSelector}`)
     }
 
     return (
