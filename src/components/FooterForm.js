@@ -38,7 +38,7 @@ class EnquiryForm extends Component {
   state = {
     confirmDirty: false,
     autoCompleteResult: [],
-    prefix: '1',
+    prefix: '+1',
     phone: '',
     email: '',
     message: '',
@@ -53,13 +53,18 @@ class EnquiryForm extends Component {
       if (!err) {
         console.log(`Handle Submit ::: ${JSON.stringify(values)}`)
         console.log(`Handle Submit 111 ::: ${JSON.stringify(this.state)}`)
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode({ 'form-name': 'contact', ...this.state }),
+        const phoneNumber = this.state.prefix + this.state.phone
+        this.setState({ phone: phoneNumber }, () => {
+          console.log(`Handle Submit 222 ::: ${JSON.stringify(this.state)}`)
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encode({ 'form-name': 'contact', ...this.state }),
+          })
+            .then(() => alert('Success'))
+            .catch(error => alert(error))
         })
-          .then(() => alert('Success'))
-          .catch(error => alert(error))
+        
       }
     })
   }
@@ -133,54 +138,54 @@ class EnquiryForm extends Component {
     })(
       <Select name="phonePrefix" style={{ width: 80 }} onChange={this.handlePhoneCodeChange}>
         {/* {this.getCountryCodes()} */}
-        <Option value="1">+1</Option>
-        <Option value="234">+234</Option>
-        <Option value="251">+251</Option>
-        <Option value="252">+252</Option>
-        <Option value="253">+253</Option>
-        <Option value="254">+254</Option>
-        <Option value="255">+255</Option>
-        <Option value="256">+256</Option>        
-        <Option value="257">+257</Option>        
-        <Option value="258">+258</Option>        
-        <Option value="259">+259</Option>        
-        <Option value="260">+260</Option>        
-        <Option value="261">+261</Option>        
-        <Option value="262">+262</Option>        
-        <Option value="60">+60</Option>        
-        <Option value="61">+61</Option>        
-        <Option value="62">+62</Option>        
-        <Option value="63">+63</Option>
-        <Option value="64">+64</Option>                        
-        <Option value="65">+65</Option>        
-        <Option value="66">+66</Option>        
-        <Option value="7">+7</Option>        
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
-        <Option value="8">+880</Option>        
-        <Option value="90">+90</Option>
-        <Option value="91">+91</Option>
-        <Option value="92">+92</Option>
-        <Option value="93">+93</Option>
-        <Option value="94">+94</Option>
-        <Option value="95">+95</Option>
-        <Option value="960">+960</Option>
-        <Option value="961">+961</Option>
-        <Option value="962">+962</Option>
-        <Option value="963">+963</Option>
-        <Option value="964">+964</Option>
-        <Option value="965">+965</Option>
-        <Option value="966">+966</Option>
-        <Option value="967">+967</Option>
-        <Option value="968">+968</Option>
-        <Option value="970">+970</Option>
-        <Option value="971">+971</Option>
-        <Option value="972">+972</Option>
-        <Option value="973">+973</Option>
-        <Option value="974">+974</Option>
-        <Option value="975">+975</Option>
-        <Option value="976">+976</Option>
-        <Option value="977">+977</Option>
+        <Option value="+1">+1</Option>
+        <Option value="+234">+234</Option>
+        <Option value="+251">+251</Option>
+        <Option value="+252">+252</Option>
+        <Option value="+253">+253</Option>
+        <Option value="+254">+254</Option>
+        <Option value="+255">+255</Option>
+        <Option value="+256">+256</Option>        
+        <Option value="+257">+257</Option>        
+        <Option value="+258">+258</Option>        
+        <Option value="+259">+259</Option>        
+        <Option value="+260">+260</Option>        
+        <Option value="+261">+261</Option>        
+        <Option value="+262">+262</Option>        
+        <Option value="+60">+60</Option>        
+        <Option value="+61">+61</Option>        
+        <Option value="+62">+62</Option>        
+        <Option value="+63">+63</Option>
+        <Option value="+64">+64</Option>                        
+        <Option value="+65">+65</Option>        
+        <Option value="+66">+66</Option>        
+        <Option value="+7">+7</Option>        
+        <Option value="+86">+86</Option>
+        <Option value="+87">+87</Option>
+        <Option value="+8">+880</Option>        
+        <Option value="+90">+90</Option>
+        <Option value="+91">+91</Option>
+        <Option value="+92">+92</Option>
+        <Option value="+93">+93</Option>
+        <Option value="+94">+94</Option>
+        <Option value="+95">+95</Option>
+        <Option value="+960">+960</Option>
+        <Option value="+961">+961</Option>
+        <Option value="+962">+962</Option>
+        <Option value="+963">+963</Option>
+        <Option value="+964">+964</Option>
+        <Option value="+965">+965</Option>
+        <Option value="+966">+966</Option>
+        <Option value="+967">+967</Option>
+        <Option value="+968">+968</Option>
+        <Option value="+970">+970</Option>
+        <Option value="+971">+971</Option>
+        <Option value="+972">+972</Option>
+        <Option value="+973">+973</Option>
+        <Option value="+974">+974</Option>
+        <Option value="+975">+975</Option>
+        <Option value="+976">+976</Option>
+        <Option value="+977">+977</Option>
 
       </Select>
     )
