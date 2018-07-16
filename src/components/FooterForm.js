@@ -51,12 +51,12 @@ class EnquiryForm extends Component {
     // this.setState({ [e.target.name]: e.target.value })
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        // console.log(`Handle Submit ::: ${JSON.stringify(values)}`)
-        // console.log(`Handle Submit 111 ::: ${JSON.stringify(this.state)}`)
+        console.log(`Handle Submit ::: ${JSON.stringify(values)}`)
+        console.log(`Handle Submit 111 ::: ${JSON.stringify(this.state)}`)
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode({ 'form-name': 'contact', values }),
+          body: encode({ 'form-name': 'contact', ...this.state }),
         })
           .then(() => alert('Success'))
           .catch(error => alert(error))
