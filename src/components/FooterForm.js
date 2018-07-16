@@ -38,7 +38,7 @@ class EnquiryForm extends Component {
   state = {
     confirmDirty: false,
     autoCompleteResult: [],
-    phonePrefix: '1',
+    prefix: '1',
     phone: '',
     email: '',
     message: '',
@@ -46,9 +46,13 @@ class EnquiryForm extends Component {
   handleSubmit = e => {
     e.preventDefault()
     // <Redirect to='/dashboard' />
-    console.log(`THIS STATE ::  ${JSON.stringify(this.state)}`)
+    // console.log(`THIS STATE ::  ${JSON.stringify(this.state)}`)
+
+    // this.setState({ [e.target.name]: e.target.value })
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
+        console.log(`Handle Submit ::: ${JSON.stringify(values)}`)
+        console.log(`Handle Submit 111 ::: ${JSON.stringify(this.state)}`)
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -62,10 +66,14 @@ class EnquiryForm extends Component {
 
   handleChange = e => {
     // this.getCountryCodes()
+    console.log(`Handle Change :: ${e.target.name}`)
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  // handlePhoneNumberChange = e => {}
+  handlePhoneCodeChange = e => {
+    console.log(`Handle PHone Code Change ::  ${JSON.stringify(e)}`)
+    this.setState({ phonePrefix: e })
+  }
   handleConfirmBlur = e => {
     const value = e.target.value
     this.setState({ confirmDirty: this.state.confirmDirty || !!value })
@@ -123,7 +131,7 @@ class EnquiryForm extends Component {
     const prefixSelector = getFieldDecorator('prefix', {
       initialValue: this.state.phonePrefix,
     })(
-      <Select name="phonePrefix" style={{ width: 80 }}>
+      <Select name="phonePrefix" style={{ width: 80 }} onChange={this.handlePhoneCodeChange}>
         {/* {this.getCountryCodes()} */}
         <Option value="1">+1</Option>
         <Option value="234">+234</Option>
@@ -220,8 +228,8 @@ class EnquiryForm extends Component {
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: 'Please input your phone number!' }],
           })(
-            // <Input addonBefore={prefixSelector} name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
-            <Input name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
+            <Input addonBefore={prefixSelector} name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
+            // <Input name="phone" value={phone} style={{ width: '100%' }} onChange={this.handleChange} />
           )}
         </FormItem>
         <FormItem
