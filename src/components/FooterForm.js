@@ -51,12 +51,12 @@ class EnquiryForm extends Component {
     // this.setState({ [e.target.name]: e.target.value })
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log(`Handle Submit ::: ${JSON.stringify(values)}`)
-        console.log(`Handle Submit 111 ::: ${JSON.stringify(this.state)}`)
+        // console.log(`Handle Submit ::: ${JSON.stringify(values)}`)
+        // console.log(`Handle Submit 111 ::: ${JSON.stringify(this.state)}`)
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode({ 'form-name': 'contact', ...this.state }),
+          body: encode({ 'form-name': 'contact', values }),
         })
           .then(() => alert('Success'))
           .catch(error => alert(error))
@@ -72,7 +72,7 @@ class EnquiryForm extends Component {
 
   handlePhoneCodeChange = e => {
     console.log(`Handle PHone Code Change ::  ${JSON.stringify(e)}`)
-    this.setState({ phonePrefix: e })
+    this.setState({ prefix: e })
   }
   handleConfirmBlur = e => {
     const value = e.target.value
@@ -129,7 +129,7 @@ class EnquiryForm extends Component {
       },
     }
     const prefixSelector = getFieldDecorator('prefix', {
-      initialValue: this.state.phonePrefix,
+      initialValue: this.state.prefix,
     })(
       <Select name="phonePrefix" style={{ width: 80 }} onChange={this.handlePhoneCodeChange}>
         {/* {this.getCountryCodes()} */}
