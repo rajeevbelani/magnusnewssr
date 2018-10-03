@@ -74,22 +74,22 @@ export default withRouteData(({ post }) => (
             >
               <SocialShare
                 type="email"
-                link={getBlogFullLink(post)}
+                // link={getBlogFullLink(post)}
                 colorIndex="grey-4"
               />
               <SocialShare
                 type="twitter"
-                link={getBlogFullLink(post)}
+                // link={getBlogFullLink(post)}
                 colorIndex="grey-4"
               />
               <SocialShare
                 type="facebook"
-                link={getBlogFullLink(post)}
+                // link={getBlogFullLink(post)}
                 colorIndex="grey-4"
               />
               <SocialShare
                 type="linkedin"
-                link={getBlogFullLink(post)}
+                // link={getBlogFullLink(post)}
                 colorIndex="grey-4"
               />
             </Box>
