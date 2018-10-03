@@ -111,21 +111,21 @@ export default {
           }),
         })),
       },
-      {
-        path: '/treatments',
-        component: 'src/containers/Blog',
-        getData: () => ({
-          posts: treatmentDescription,
-          pageTitle: 'Treatments',
-        }),
-        children: treatmentDescription.map(post => ({
-          path: `/treatment/${post.slug}`,
-          component: 'src/containers/Post',
-          getData: () => ({
-            post,
-          }),
-        })),
-      },
+      // {
+      //   path: '/treatments',
+      //   component: 'src/containers/Blog',
+      //   getData: () => ({
+      //     posts: treatmentDescription,
+      //     pageTitle: 'Treatments',
+      //   }),
+      //   children: treatmentDescription.map(post => ({
+      //     path: `/treatment/${post.slug}`,
+      //     component: 'src/containers/Post',
+      //     getData: () => ({
+      //       post,
+      //     }),
+      //   })),
+      // },
       {
         path: '/feed/liver-cancer',
         component: 'src/containers/Blog',
