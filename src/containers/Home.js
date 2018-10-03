@@ -23,8 +23,8 @@ class Home extends Component {
       <Head>
         <meta charSet="UTF-8" />
         <title>Medical Tourism in India, Medical treatment at Affordable Price, Travel with Magnus Medi</title>
-        <meta name="description" content="Magnus Medi helps you to get the best treatment at an affordable price by connecting you to best hospitals and doctors in India. It assists you in your medical journey to India by providing multiple opinions, hotels and travel facilities." />
-        <meta name="keywords" content="Best Medical tourism company in India, Healthcare tourism in India, Medical Travel Assistance, Medical tour facilitator, Affordable price for medical treatment in India, Medical Care, multiple opinions from doctor, free quotes, Enquiry" />
+        {/* <meta name="description" content="Magnus Medi helps you to get the best treatment at an affordable price by connecting you to best hospitals and doctors in India. It assists you in your medical journey to India by providing multiple opinions, hotels and travel facilities." />
+        <meta name="keywords" content="Best Medical tourism company in India, Healthcare tourism in India, Medical Travel Assistance, Medical tour facilitator, Affordable price for medical treatment in India, Medical Care, multiple opinions from doctor, free quotes, Enquiry" /> */}
       </Head>
       <div>
         <Banner />

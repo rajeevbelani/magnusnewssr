@@ -111,21 +111,21 @@ export default {
           }),
         })),
       },
-      // {
-      //   path: '/treatments',
-      //   component: 'src/containers/Blog',
-      //   getData: () => ({
-      //     posts: treatmentDescription,
-      //     pageTitle: 'Treatments',
-      //   }),
-      //   children: treatmentDescription.map(post => ({
-      //     path: `/treatment/${post.slug}`,
-      //     component: 'src/containers/Post',
-      //     getData: () => ({
-      //       post,
-      //     }),
-      //   })),
-      // },
+      {
+        path: '/treatments',
+        component: 'src/containers/Blog',
+        getData: () => ({
+          posts: treatmentDescription,
+          pageTitle: 'Treatments',
+        }),
+        children: treatmentDescription.map(post => ({
+          path: `/treatment/${post.slug}`,
+          component: 'src/containers/Post',
+          getData: () => ({
+            post,
+          }),
+        })),
+      },
       {
         path: '/feed/liver-cancer',
         component: 'src/containers/Blog',
@@ -202,8 +202,8 @@ export default {
             <title>Magnus Medi</title>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="description" content="Magnus Medi helps you to get the best treatment at an affordable price by connecting you to best hospitals and doctors in India. It assists you in your medical journey to India by providing multiple opinions, hotels and travel facilities." />
-            <meta name="keywords" content="Best Medical tourism company in India, Healthcare tourism in India, Medical Travel Assistance, Medical tour facilitator, Affordable price for medical treatment in India, Medical Care, multiple opinions from doctor, free quotes, Enquiry" />
+            {/* <meta name="description" content="Magnus Medi helps you to get the best treatment at an affordable price by connecting you to best hospitals and doctors in India. It assists you in your medical journey to India by providing multiple opinions, hotels and travel facilities." />
+            <meta name="keywords" content="Best Medical tourism company in India, Healthcare tourism in India, Medical Travel Assistance, Medical tour facilitator, Affordable price for medical treatment in India, Medical Care, multiple opinions from doctor, free quotes, Enquiry" /> */}
             <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

@@ -20,8 +20,8 @@ import { getBlogTypeString, getBlogHeading, getBlogShortDescription, getBlogDesc
 export default withRouteData(({ patientStories }) => (
   <Box colorIndex="light-2">
     <Head>
-      <meta charSet="UTF-8" />
-      <title>Medical Tourism in India, Medical treatment at Affordable Price, Travel with Magnus Medi, </title>
+      {/* <meta charSet="UTF-8" />
+      <title>Medical Tourism in India, Medical treatment at Affordable Price, Travel with Magnus Medi, </title> */}
     </Head>
     <Section pad="large"
       justify="center"
