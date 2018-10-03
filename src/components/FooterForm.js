@@ -45,17 +45,10 @@ class EnquiryForm extends Component {
   };
   handleSubmit = e => {
     e.preventDefault()
-    // <Redirect to='/dashboard' />
-    // console.log(`THIS STATE ::  ${JSON.stringify(this.state)}`)
-
-    // this.setState({ [e.target.name]: e.target.value })
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        // console.log(`Handle Submit ::: ${JSON.stringify(values)}`)
-        // console.log(`Handle Submit 111 ::: ${JSON.stringify(this.state)}`)
         const phoneNumber = this.state.prefix + this.state.phone
         this.setState({ phone: phoneNumber }, () => {
-          // console.log(`Handle Submit 222 ::: ${JSON.stringify(this.state)}`)
           fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -64,7 +57,6 @@ class EnquiryForm extends Component {
             .then(() => alert('Success'))
             .catch(error => alert(error))
         })
-        
       }
     })
   }
@@ -204,8 +196,7 @@ class EnquiryForm extends Component {
     }
 
     return (
-      <Form name="contact" method="post" data-netlify="true" className="footerForm" onSubmit={this.handleSubmit}>
-
+      <Form name="contact" method="post" className="footerForm" onSubmit={this.handleSubmit}>
         {/* <p hidden>
           <label>
               Don’t fill this out: <input name="bot-field" onChange={this.handleChange} />
